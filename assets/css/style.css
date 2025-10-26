@@ -163,7 +163,7 @@ main {
             display: flex;
             flex-wrap: wrap;
             gap: 30px;
-            
+            justify-content: center;
 
             & .product {
                 width: 300px;
@@ -464,12 +464,17 @@ footer {
                 padding: 30px 10px;
                 position: relative;
 
+                & .content {
+                    z-index: 1000;
+                
+                }
+
                 & .model {
                     width: 350px;
                     position: absolute;
                     right: 20px;
                     bottom: 0;
-                    display: none;
+                    opacity: .2;    
                 }
             } 
 
