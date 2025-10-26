@@ -451,8 +451,8 @@ footer {
 
 @media screen and (max-width: 350px) {
     header {
-       
-
+        padding: 10px 40px;
+    
         & input {
             display: none;
         }
@@ -461,7 +461,7 @@ footer {
     main {
         & #hero {
              & .container {
-                padding: 60px 40px;
+                padding: 30px 10px;
                 position: relative;
 
                 & .model {
@@ -475,6 +475,24 @@ footer {
 
             & .tarja {
                 overflow: hidden;
+            }
+        }
+
+        & #category {
+            padding: 0px 10px;
+        }
+
+        & #products {
+            padding: 30px 10px;
+            justify-content: center;
+            align-items: center;
+
+            & h2 {
+                text-align: center;
+            }
+
+            & .products {
+                justify-content: center;
             }
         }
     }
