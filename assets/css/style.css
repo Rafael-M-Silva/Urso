@@ -111,6 +111,7 @@ main {
             padding: 10px 20px;
             gap: 20px;
             justify-content: space-between;
+            overflow: hidden;
 
             & .itens {
                 display: flex;
