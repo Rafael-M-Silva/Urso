@@ -252,3 +252,230 @@ footer {
     color: #fff;
     font-size: 30px;
 }
+
+@media screen and (max-width: 1170px) {
+    main {
+        & #hero {
+          & .container {
+            display: flex;
+            padding: 0px 120px;
+            padding-bottom: 0px;
+            color: #fff;
+            align-items: center;
+
+            & .content {
+                max-width: 545px;
+                display: flex;
+                flex-direction: column;
+                gap: 50px;
+                & .title {
+                    & p {
+                        width: 427px;
+                        padding-bottom: 16px;
+                        border-bottom: #fff 1px solid;
+                    }
+
+                    h1 {
+                        margin-top: 28px;
+                        font-size: 44px;
+                    }
+                }
+
+                & a {
+                    width: 270px;
+                    border: 1px solid #fff;
+                    border-radius: 100px;
+                    padding: 20px 40px;
+                    color: #fff;
+                    font-size: 20px;
+                    justify-content: space-between;
+                    display: flex;
+                    transition: .3s ease-in-out;
+                }
+
+                & a:hover {
+                    width: 316px;
+                }
+            }
+
+            & .model {
+                width: 450px;
+                object-fit: contain;
+            }
+        }   
+        }
+    }
+    
+}
+
+@media screen and (max-width: 1000px) {
+    header {
+        padding: 20px 40px;
+    }
+
+    main {
+        & #hero {
+
+            & .container {
+                padding: 60px 40px;
+                position: relative;
+
+                & .model {
+                    width: 350px;
+                    position: absolute;
+                    right: 20px;
+                    bottom: 0;
+                }
+            }    
+        }
+
+        & #category {
+            padding: 0px 40px;
+        }
+
+        & #products {
+            padding: 60px 40px;
+            justify-content: center;
+            align-items: center;
+
+            & h2 {
+                text-align: center;
+            }
+
+            & .products {
+                justify-content: center;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+   
+
+    main {
+        & #hero {
+
+              & .tarja {
+            display: flex;
+            background-color: var(--second-color);
+            padding: 10px 20px;
+            gap: 20px;
+            justify-content: space-between;
+
+            & .itens {
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                font-weight: 700;
+                gap: 10px;
+
+                & img {
+                    width: 30px;
+                }
+            }
+        }
+        }
+    }
+
+    footer {
+        background-position: 20% 10%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    header {
+       
+
+        & input {
+            display: none;
+        }
+    }
+
+    main {
+        & #hero {
+            & .container {
+                
+                & .content {
+                    width: 300px;
+
+                    & .title {
+
+                        & h1 {
+                            font-size: 30px;
+                        }
+                    }
+
+                
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header {
+       
+
+        & input {
+            display: none;
+        }
+    }
+
+    main {
+        & #hero {
+            & .container {
+
+                
+                & .content {
+                    width: 300px;
+
+                    & .title {
+
+                        & h1 {
+                            font-size: 30px;
+                        }
+
+                        & p {
+                            font-size: 14px;
+                            width: 300px;
+                        }
+                    }
+
+                
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 350px) {
+    header {
+       
+
+        & input {
+            display: none;
+        }
+    }
+
+    main {
+        & #hero {
+             & .container {
+                padding: 60px 40px;
+                position: relative;
+
+                & .model {
+                    width: 350px;
+                    position: absolute;
+                    right: 20px;
+                    bottom: 0;
+                    display: none;
+                }
+            } 
+
+            & .tarja {
+                overflow: hidden;
+            }
+        }
+    }
+}
