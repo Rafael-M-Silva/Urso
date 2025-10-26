@@ -424,6 +424,9 @@ footer {
     }
 
     main {
+        & header {
+            padding: 10px 10px;
+        }
         & #hero {
             & .container {
 
