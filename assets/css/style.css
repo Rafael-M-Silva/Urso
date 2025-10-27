@@ -66,6 +66,7 @@ main {
             color: #fff;
             align-items: center;
             position: relative;
+            justify-content: space-between;
 
             & .content {
                 max-width: 545px;
