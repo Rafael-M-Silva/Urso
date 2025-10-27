@@ -55,6 +55,9 @@ main {
     & #hero {
         background-image: url("../img/bg.png");
         background-color: var(--primary-color);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-positon: center;
 
         & .container {
             display: flex;
