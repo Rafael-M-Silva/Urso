@@ -4,508 +4,750 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Urso Supplements</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <title>Urso Suplementos – Whey, Creatina, Aminoácidos & Energético Predador</title>
+  <meta name="description"
+    content="Treine com garra. Suplementos Urso: whey premium, creatina potente, aminoácidos e a linha Predador de energéticos. Seja Urso. Domine." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            display: ['Anton', 'sans-serif'],
-            body: ['Montserrat', 'sans-serif']
-          },
-          colors: {
-            primary: '#FF542E',
-            dark: '#08090B',
-            charcoal: '#1C1F26'
-          },
-          backgroundImage: {
-            hero: "linear-gradient(135deg, rgba(12,12,12,0.95), rgba(255,84,46,0.75)), url('https://images.unsplash.com/photo-1571008887538-b36bb32f4571?auto=format&fit=crop&w=1600&q=80')"
-          }
-        }
+  <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet" />
+  <style>
+    :root {
+      --urso-yellow: #ffc600;
+      --urso-black: #2d3326;
+      --urso-off-black: #12140f;
+      --urso-gray: #d2d4cc;
+      --urso-dark-gray: rgba(255, 255, 255, 0.08);
+      --font-primary: 'Gilroy', 'Gilroy-Bold', 'Gilroy-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      background-color: var(--urso-off-black);
+      color: #f7f7f2;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(18, 20, 15, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .container {
+      width: min(1120px, 92vw);
+      margin: 0 auto;
+    }
+
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      font-size: 1.75rem;
+      letter-spacing: 0.28em;
+      font-weight: 700;
+      color: var(--urso-yellow);
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover {
+      color: var(--urso-yellow);
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 1.75rem;
+      background: var(--urso-yellow);
+      color: var(--urso-black);
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 14px 30px rgba(255, 198, 0, 0.22);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 36px rgba(255, 198, 0, 0.32);
+    }
+
+    .hero {
+      background: radial-gradient(circle at top, rgba(255, 198, 0, 0.16), rgba(18, 20, 15, 0.92)), var(--urso-black);
+      padding: 5rem 0 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1400&q=80') center/cover;
+      opacity: 0.18;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: 1.75rem;
+    }
+
+    .hero-tagline {
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.62);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.3rem, 6vw, 4.2rem);
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    .hero h1 strong {
+      color: var(--urso-yellow);
+    }
+
+    .hero p {
+      max-width: 540px;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 1rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 360px;
+    }
+
+    .hero-actions .secondary {
+      background: transparent;
+      color: var(--urso-yellow);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow: none;
+    }
+
+    .hero-actions .secondary:hover {
+      background: rgba(255, 198, 0, 0.12);
+    }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 0.8rem;
+      color: var(--urso-yellow);
+      margin-bottom: 1.25rem;
+    }
+
+    .section-heading {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-description {
+      color: rgba(255, 255, 255, 0.68);
+      max-width: 620px;
+      margin-bottom: 2.5rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .why-card {
+      display: grid;
+      gap: 1rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--urso-dark-gray);
+      padding: 1.5rem;
+      border-radius: 1.5rem;
+    }
+
+    .why-card h3 {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 1rem;
+      color: var(--urso-yellow);
+    }
+
+    .why-card p {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.95rem;
+    }
+
+    .objectives-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .objective-card {
+      position: relative;
+      border-radius: 1.75rem;
+      overflow: hidden;
+      min-height: 320px;
+      background: rgba(255, 255, 255, 0.04);
+      display: grid;
+      align-content: flex-end;
+    }
+
+    .objective-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(20%) contrast(110%);
+      opacity: 0.45;
+    }
+
+    .objective-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(18, 20, 15, 0) 25%, rgba(18, 20, 15, 0.94) 100%);
+    }
+
+    .objective-content {
+      position: relative;
+      z-index: 2;
+      padding: 2rem;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .objective-content span {
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .objective-content h3 {
+      font-size: 1.8rem;
+      text-transform: uppercase;
+    }
+
+    .objective-content p {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.95rem;
+    }
+
+    .objective-content a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.8rem;
+      color: var(--urso-yellow);
+    }
+
+    .predador-section {
+      background: var(--urso-yellow);
+      color: var(--urso-black);
+      border-radius: 2rem;
+      padding: 3rem 2rem;
+      display: grid;
+      gap: 2rem;
+    }
+
+    .predador-header {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .predador-header h2 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .predador-header p {
+      color: rgba(45, 51, 38, 0.8);
+      max-width: 520px;
+    }
+
+    .predador-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .predador-card {
+      background: rgba(0, 0, 0, 0.08);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      display: grid;
+      gap: 0.75rem;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .predador-card h3 {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.95rem;
+    }
+
+    .predador-card p {
+      color: rgba(45, 51, 38, 0.8);
+      font-size: 0.9rem;
+    }
+
+    .testimonials {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--urso-dark-gray);
+      border-radius: 1.75rem;
+      padding: 2rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .testimonial-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .testimonial-meta img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .testimonial-meta div {
+      display: grid;
+      gap: 0.15rem;
+    }
+
+    .testimonial-meta span {
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      font-size: 0.65rem;
+      color: var(--urso-yellow);
+    }
+
+    .products-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .product-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--urso-dark-gray);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      display: grid;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .product-card h3 {
+      text-transform: uppercase;
+      font-size: 1.1rem;
+    }
+
+    .product-card p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+    }
+
+    .product-card a {
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.75rem;
+      color: var(--urso-yellow);
+    }
+
+    footer {
+      background: var(--urso-black);
+      padding: 3rem 0;
+      margin-top: 4rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .footer-grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .footer-brand {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .footer-brand p {
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 420px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      font-size: 0.75rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--urso-yellow);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 198, 0, 0.12);
+      color: var(--urso-yellow);
+      padding: 0.65rem 1.1rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 0.7rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero {
+        padding: 6rem 0 5rem;
+      }
+
+      .hero-actions {
+        flex-direction: row;
+      }
+
+      .predador-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .testimonials {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
-  </script>
-  <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: #0d0f13;
-      color: #f3f4f6;
+
+    @media (min-width: 768px) {
+      .nav-links {
+        display: flex;
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .objectives-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .predador-section {
+        grid-template-columns: 1.1fr 1fr;
+        align-items: center;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns: 1.1fr 0.9fr 0.9fr;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero {
+        padding: 7rem 0 6rem;
+      }
+
+      .hero-content {
+        gap: 2rem;
+        max-width: 680px;
+      }
+
+      .objectives-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
     }
   </style>
 </head>
 
-<body class="bg-dark text-gray-100">
-  <header class="sticky top-0 z-50 bg-dark/95 backdrop-blur border-b border-white/5">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-4">
-      <div class="flex items-center gap-3">
-        <span class="text-primary text-3xl font-display tracking-widest">URSO</span>
-        <span class="hidden sm:block uppercase text-xs tracking-[0.4em] text-gray-400">Força & Resultado</span>
-      </div>
-      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
-        <a href="#objetivos" class="hover:text-primary transition">Objetivos</a>
-        <a href="#kits" class="hover:text-primary transition">Kits</a>
-        <a href="#diferenciais" class="hover:text-primary transition">Diferenciais</a>
-        <a href="#blog" class="hover:text-primary transition">Blog</a>
-        <a href="#faq" class="hover:text-primary transition">FAQ</a>
+<body>
+  <header>
+    <div class="container nav-bar">
+      <a class="brand" href="#inicio">URSO</a>
+      <nav class="nav-links">
+        <a href="#porque">Por que Urso?</a>
+        <a href="#objetivos">Objetivos</a>
+        <a href="#predador">Predador</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#comunidade">Comunidade</a>
       </nav>
-      <div class="flex items-center gap-4">
-        <input type="search" placeholder="Buscar suplementos" class="hidden md:block bg-charcoal text-sm px-4 py-2 rounded-full border border-white/10 focus:outline-none focus:ring-2 focus:ring-primary/70" />
-        <a href="#kits" class="px-4 py-2 bg-primary text-white font-semibold rounded-full shadow-lg shadow-primary/40 hover:shadow-primary/60 transition">Comprar Agora</a>
-      </div>
+      <a class="cta-button" href="#produtos">Domine seu território</a>
     </div>
   </header>
 
   <main>
-    <!-- Hero -->
-    <section class="bg-hero bg-cover bg-center text-white">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-        <div class="max-w-2xl space-y-6">
-          <p class="uppercase tracking-[0.3em] text-sm text-primary font-semibold">Suplementos de elite para performance máxima</p>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display leading-tight">Transforme Treinos em Resultados de Campeão</h1>
-          <p class="text-lg text-gray-200">Linha premium desenvolvida com atletas para quem vive no limite. Fórmulas com aprovação ANVISA, entregas em 24h e planos personalizados por objetivo.</p>
-          <div class="flex flex-col sm:flex-row gap-4 pt-4">
-            <a href="#top-vendidos" class="px-6 py-3 bg-primary rounded-full font-semibold text-center shadow-lg shadow-primary/40 hover:shadow-primary/60 transition">Ver Top Vendidos</a>
-            <a href="#objetivos" class="px-6 py-3 border border-white/60 rounded-full font-semibold text-center hover:bg-white hover:text-dark transition">Montar minha estratégia</a>
-          </div>
-          <div class="flex items-center gap-6 text-sm uppercase tracking-widest pt-6">
-            <div class="flex items-center gap-2">
-              <span class="text-3xl font-display">+320k</span>
-              <span class="text-gray-300">Atletas Urso</span>
-            </div>
-            <div class="w-px h-8 bg-white/20"></div>
-            <div class="flex items-center gap-2">
-              <span class="text-3xl font-display">98%</span>
-              <span class="text-gray-300">Satisfação</span>
-            </div>
-          </div>
+    <section id="inicio" class="hero">
+      <div class="container hero-content">
+        <span class="hero-tagline">Força bruta · energia intensa · recuperação rápida</span>
+        <h1>Treine como <strong>Urso</strong>. <br />Domine. Não peça licença.</h1>
+        <p>
+          Fórmulas desenvolvidas para quem treina pesado e não aceita desculpas.
+          Whey brasileiro de alta performance, creatina potente, aminoácidos cirúrgicos e a linha Predador para iniciar a caçada.
+        </p>
+        <div class="hero-actions">
+          <a class="cta-button" href="#predador">Comece a caçada</a>
+          <a class="cta-button secondary" href="#objetivos">Monte seu arsenal</a>
         </div>
+        <div class="badge">Velocidade mata a concorrência</div>
       </div>
     </section>
 
-    <!-- Produtos por objetivo -->
-    <section id="objetivos" class="py-20 bg-gradient-to-b from-dark via-charcoal to-dark">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
-          <div>
-            <p class="text-primary uppercase tracking-[0.35em] text-xs font-semibold">Objetivo certo, resultado implacável</p>
-            <h2 class="text-3xl sm:text-4xl font-display">Escolha seu objetivo</h2>
-          </div>
-          <p class="text-gray-300 max-w-xl">Seleção curada com blends avançados e protocolos orientados por coaches Urso. Clique para ver combos e recomendações.</p>
-        </div>
-        <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
-          <article class="group bg-charcoal/80 border border-white/5 rounded-3xl overflow-hidden shadow-xl shadow-black/50 hover:border-primary/50 transition">
-            <div class="h-48 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1526401281623-7ae79c67e3d4?auto=format&fit=crop&w=900&q=80')"></div>
-            <div class="p-8 space-y-4">
-              <span class="text-primary font-semibold uppercase tracking-[0.3em] text-xs">Hipertrofia</span>
-              <h3 class="text-2xl font-display">Ganho de Massa</h3>
-              <p class="text-gray-300 text-sm">Proteínas de alta absorção, creatina tamponada e carboidratos estratégicos para construção muscular acelerada.</p>
-              <button class="flex items-center gap-2 text-primary font-semibold">Ver protocolos <span aria-hidden="true">→</span></button>
-            </div>
+    <section id="porque">
+      <div class="container">
+        <p class="section-title">Cultura urso</p>
+        <h2 class="section-heading">Pense como um urso. Aja como um urso.</h2>
+        <p class="section-description">
+          A Urso Suplementos nasceu da rua, da arena e dos treinos que começam antes do sol nascer.
+          Aqui a preguiça hiberna para sempre. Quem entra para a alcateia abraça a força bruta, a disciplina e a fome de vitória.
+        </p>
+        <div class="grid why-grid">
+          <article class="why-card">
+            <h3>Força bruta garantida</h3>
+            <p>Matérias-primas rastreadas, blends sem frescura e doses generosas para você dominar os limites.</p>
           </article>
-          <article class="group bg-charcoal/80 border border-white/5 rounded-3xl overflow-hidden shadow-xl shadow-black/50 hover:border-primary/50 transition">
-            <div class="h-48 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&fit=crop&w=900&q=80')"></div>
-            <div class="p-8 space-y-4">
-              <span class="text-primary font-semibold uppercase tracking-[0.3em] text-xs">Definição</span>
-              <h3 class="text-2xl font-display">Queima e Definição</h3>
-              <p class="text-gray-300 text-sm">Termogênicos avançados, L-carnitina e BCAAs para preservar massa magra enquanto seca o shape.</p>
-              <button class="flex items-center gap-2 text-primary font-semibold">Ver protocolos <span aria-hidden="true">→</span></button>
-            </div>
+          <article class="why-card">
+            <h3>Energia que caça</h3>
+            <p>Predador é o energético inovador para iniciar a caçada: foco, agressividade e instinto liberados em três versões.</p>
           </article>
-          <article class="group bg-charcoal/80 border border-white/5 rounded-3xl overflow-hidden shadow-xl shadow-black/50 hover:border-primary/50 transition">
-            <div class="h-48 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1556817411-31ae72fa3ea0?auto=format&fit=crop&w=900&q=80')"></div>
-            <div class="p-8 space-y-4">
-              <span class="text-primary font-semibold uppercase tracking-[0.3em] text-xs">Energia</span>
-              <h3 class="text-2xl font-display">Explosão & Performance</h3>
-              <p class="text-gray-300 text-sm">Pré-treinos neurostimulantes, beta-alanina e eletrólitos para treinos intensos sem perder o foco.</p>
-              <button class="flex items-center gap-2 text-primary font-semibold">Ver protocolos <span aria-hidden="true">→</span></button>
-            </div>
-          </article>
-          <article class="group bg-charcoal/80 border border-white/5 rounded-3xl overflow-hidden shadow-xl shadow-black/50 hover:border-primary/50 transition">
-            <div class="h-48 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1605296867424-35fc25c9216d?auto=format&fit=crop&w=900&q=80')"></div>
-            <div class="p-8 space-y-4">
-              <span class="text-primary font-semibold uppercase tracking-[0.3em] text-xs">Saúde</span>
-              <h3 class="text-2xl font-display">Imunidade & Bem-estar</h3>
-              <p class="text-gray-300 text-sm">Vitaminas bioativas, ômega-3 ultra puro e probióticos para manutenção da saúde e recuperação total.</p>
-              <button class="flex items-center gap-2 text-primary font-semibold">Ver protocolos <span aria-hidden="true">→</span></button>
-            </div>
+          <article class="why-card">
+            <h3>Recuperação selvagem</h3>
+            <p>Whey, creatina e aminoácidos calibrados para reconstruir fibra por fibra. Se não ajuda você a vencer, fica pra trás.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Depoimentos & Antes/Depois -->
-    <section class="py-20 bg-dark">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 mb-12">
-          <div>
-            <p class="text-primary uppercase tracking-[0.35em] text-xs font-semibold">Histórias de transformação</p>
-            <h2 class="text-3xl sm:text-4xl font-display">Depoimentos e Resultados Reais</h2>
-          </div>
-          <p class="text-gray-300 max-w-xl">Cada kit Urso é calibrado com acompanhamento dos nossos coaches. Confira a evolução da alcateia.</p>
+    <section id="objetivos">
+      <div class="container">
+        <p class="section-title">Escolha seu território</p>
+        <h2 class="section-heading">Objetivo certo, ataque certeiro</h2>
+        <p class="section-description">
+          Navegue por meta ou categoria como na elite mundial. Selecione o instinto dominante e monte o combo perfeito.
+        </p>
+        <div class="objectives-grid">
+          <article class="objective-card">
+            <img src="https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&w=900&q=80" alt="Construir músculo" />
+            <div class="objective-content">
+              <span>Construir músculo</span>
+              <h3>Ganho de massa</h3>
+              <p>Whey Urso com 24g de proteína por dose + Creatina Monohidratada para crescimento implacável.</p>
+              <a href="#produtos">Ver produtos →</a>
+            </div>
+          </article>
+          <article class="objective-card">
+            <img src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=900&q=80" alt="Energia máxima" />
+            <div class="objective-content">
+              <span>Energia máxima</span>
+              <h3>Linha Predador</h3>
+              <p>Três fórmulas de ataque: pré-treino, energia diária e concentração letal. Tome o espaço antes de todos.</p>
+              <a href="#predador">Iniciar caçada →</a>
+            </div>
+          </article>
+          <article class="objective-card">
+            <img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?auto=format&fit=crop&w=900&q=80" alt="Recuperação" />
+            <div class="objective-content">
+              <span>Recuperação total</span>
+              <h3>Aminoácidos</h3>
+              <p>BCAAs, glutamina e eletrólitos para reconstruir mais rápido e voltar ao ataque em menos tempo.</p>
+              <a href="#produtos">Domine seu território →</a>
+            </div>
+          </article>
         </div>
-        <div class="grid gap-8 lg:grid-cols-2">
-          <div class="bg-charcoal/80 rounded-3xl border border-white/5 p-8 space-y-6 shadow-xl shadow-black/40">
-            <div class="flex items-center gap-4">
-              <img src="https://images.unsplash.com/photo-1549049950-48d5887197d0?auto=format&fit=crop&w=120&q=80" alt="Felipe" class="w-14 h-14 rounded-full object-cover" />
+      </div>
+    </section>
+
+    <section id="predador" class="container">
+      <div class="predador-section">
+        <div class="predador-header">
+          <span class="badge" style="background: rgba(0,0,0,0.08); color: var(--urso-black);">Predador</span>
+          <h2>Energia para caçar. Instinto para finalizar.</h2>
+          <p>
+            Predador é a linha de energéticos premium da Urso. Criada para liberar instintos selvagens: foco extremo, agressividade controlada e recuperação acelerada entre rounds. Sem crash, só ataque.
+          </p>
+          <a class="cta-button" style="justify-self: start; background: var(--urso-black); color: var(--urso-yellow); box-shadow: none;"
+            href="#produtos">Ver linha Predador</a>
+        </div>
+        <div class="predador-grid">
+          <article class="predador-card">
+            <h3>Predador Pré-Treino</h3>
+            <p>Beta-alanina, citrulina e cafeína microdosada para iniciar a caçada com explosão e clareza mental.</p>
+          </article>
+          <article class="predador-card">
+            <h3>Predador Focus</h3>
+            <p>Blend neuroativo com nootrópicos para quem domina o dia inteiro: trabalho, treino, repetição.</p>
+          </article>
+          <article class="predador-card">
+            <h3>Predador Noturno</h3>
+            <p>Recarga controlada para treinos tardios. Energia sustentável sem roubar o sono do caçador.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="comunidade">
+      <div class="container">
+        <p class="section-title">Prova social</p>
+        <h2 class="section-heading">Errei, levantei, voltei mais forte</h2>
+        <p class="section-description">
+          Histórias da alcateia que não pede licença. Gente real, suor real, resultados de quem tomou o espaço.
+        </p>
+        <div class="testimonials">
+          <article class="testimonial-card">
+            <div class="testimonial-meta">
+              <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=120&q=80" alt="Joel" />
               <div>
-                <h3 class="font-semibold">Felipe Andrade</h3>
-                <p class="text-xs uppercase tracking-[0.2em] text-primary">Atleta Men´s Physique</p>
+                <strong>Joel Mota</strong>
+                <span>Treinador Urso</span>
               </div>
             </div>
-            <p class="text-gray-300">“Com a linha Ganho de Massa da Urso consegui subir 4kg de massa magra em 8 semanas. Energia alta, recuperação rápida e zero desconforto.”</p>
-            <div class="grid grid-cols-2 gap-4 text-sm">
-              <div class="bg-dark/60 rounded-2xl p-4">
-                <p class="text-xs uppercase tracking-[0.3em] text-gray-400">Antes</p>
-                <p class="text-2xl font-display">78kg</p>
-              </div>
-              <div class="bg-dark/60 rounded-2xl p-4">
-                <p class="text-xs uppercase tracking-[0.3em] text-gray-400">Depois</p>
-                <p class="text-2xl font-display text-primary">82kg</p>
-              </div>
-            </div>
-          </div>
-          <div class="bg-charcoal/80 rounded-3xl border border-white/5 p-8 space-y-6 shadow-xl shadow-black/40">
-            <div class="flex items-center gap-4">
-              <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=120&q=80" alt="Camila" class="w-14 h-14 rounded-full object-cover" />
+            <p>“Treine como um urso selvagem. Com a creatina Urso, meus atletas ganharam potência sem perder precisão. Quem vende, manda.”</p>
+          </article>
+          <article class="testimonial-card">
+            <div class="testimonial-meta">
+              <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=120&q=80" alt="Nina" />
               <div>
-                <h3 class="font-semibold">Camila Duarte</h3>
-                <p class="text-xs uppercase tracking-[0.2em] text-primary">Crossfitter Elite</p>
+                <strong>Nina Rocha</strong>
+                <span>Atleta amadora</span>
               </div>
             </div>
-            <p class="text-gray-300">“Os pré-treinos da linha Explosão me deram foco insano. Bati PRs semana após semana e melhorei minha composição corporal.”</p>
-            <div class="grid grid-cols-2 gap-4 text-sm">
-              <div class="bg-dark/60 rounded-2xl p-4">
-                <p class="text-xs uppercase tracking-[0.3em] text-gray-400">Gordura</p>
-                <p class="text-2xl font-display">19%</p>
-              </div>
-              <div class="bg-dark/60 rounded-2xl p-4">
-                <p class="text-xs uppercase tracking-[0.3em] text-gray-400">Após 10 sem.</p>
-                <p class="text-2xl font-display text-primary">12%</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Kits Promocionais -->
-    <section id="kits" class="py-20 bg-[radial-gradient(circle_at_top,_#2a2e37,_#0d0f13_70%)]">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 mb-12">
-          <div>
-            <p class="text-primary uppercase tracking-[0.35em] text-xs font-semibold">Oferta limitada</p>
-            <h2 class="text-3xl sm:text-4xl font-display">Kits promocionais</h2>
-          </div>
-          <div class="text-center lg:text-right">
-            <p class="text-gray-300 text-sm uppercase tracking-[0.3em]">Termina em</p>
-            <div id="countdown" class="mt-2 flex justify-center lg:justify-end gap-3 text-2xl font-display"></div>
-          </div>
-        </div>
-        <div class="grid gap-8 lg:grid-cols-3">
-          <article class="bg-charcoal/90 border border-primary/40 rounded-3xl p-8 space-y-6 shadow-2xl shadow-black/50">
-            <span class="inline-flex items-center gap-2 bg-primary/20 text-primary px-4 py-1 rounded-full text-xs uppercase tracking-[0.3em]">Mais vendido</span>
-            <h3 class="text-2xl font-display">Kit Massa Monstruosa</h3>
-            <ul class="space-y-3 text-sm text-gray-300">
-              <li>• 2x Whey 100% Ultra Filtrado</li>
-              <li>• Creatina Creapure 300g</li>
-              <li>• Hipercalórico Clean Gainer</li>
-            </ul>
-            <div class="flex items-end gap-3">
-              <span class="text-4xl font-display text-primary">R$ 349</span>
-              <span class="text-gray-400 line-through">R$ 489</span>
-            </div>
-            <button class="w-full py-3 rounded-full bg-primary font-semibold shadow-lg shadow-primary/40 hover:shadow-primary/60 transition">Garantir meu kit</button>
+            <p>“Predador me entrega foco inquebrável. Não adianta ter razão e perder o jogo. Com Urso eu domino o território.”</p>
           </article>
-          <article class="bg-charcoal/90 border border-white/10 rounded-3xl p-8 space-y-6 shadow-xl shadow-black/50">
-            <span class="inline-flex items-center gap-2 bg-white/10 text-gray-200 px-4 py-1 rounded-full text-xs uppercase tracking-[0.3em]">Definição</span>
-            <h3 class="text-2xl font-display">Kit Shred Implacável</h3>
-            <ul class="space-y-3 text-sm text-gray-300">
-              <li>• Termogênico Fúria 3.0</li>
-              <li>• L-Carnitina 2000mg</li>
-              <li>• Pré-treino Nitro Pulse</li>
-            </ul>
-            <div class="flex items-end gap-3">
-              <span class="text-4xl font-display text-primary">R$ 279</span>
-              <span class="text-gray-400 line-through">R$ 399</span>
+          <article class="testimonial-card">
+            <div class="testimonial-meta">
+              <img src="https://images.unsplash.com/photo-1526401485004-46910ecc8e51?auto=format&fit=crop&w=120&q=80" alt="Rafa" />
+              <div>
+                <strong>Rafa Vidal</strong>
+                <span>Comunidade Urso</span>
+              </div>
             </div>
-            <button class="w-full py-3 rounded-full bg-white text-dark font-semibold hover:bg-primary hover:text-white transition">Comprar agora</button>
-          </article>
-          <article class="bg-charcoal/90 border border-white/10 rounded-3xl p-8 space-y-6 shadow-xl shadow-black/50">
-            <span class="inline-flex items-center gap-2 bg-white/10 text-gray-200 px-4 py-1 rounded-full text-xs uppercase tracking-[0.3em]">Saúde total</span>
-            <h3 class="text-2xl font-display">Kit Imunidade Urso</h3>
-            <ul class="space-y-3 text-sm text-gray-300">
-              <li>• Multivitamínico Alpha</li>
-              <li>• Ômega-3 Ultra Pure</li>
-              <li>• Probiótico Biotech</li>
-            </ul>
-            <div class="flex items-end gap-3">
-              <span class="text-4xl font-display text-primary">R$ 219</span>
-              <span class="text-gray-400 line-through">R$ 299</span>
-            </div>
-            <button class="w-full py-3 rounded-full bg-primary font-semibold shadow-lg shadow-primary/40 hover:shadow-primary/60 transition">Garantir meu kit</button>
+            <p>“Aminoácidos Urso cortaram minha fadiga pós-perna. Se não ajuda a vender, ajuda a atrapalhar — aqui só fica quem joga pra ganhar.”</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Diferenciais -->
-    <section id="diferenciais" class="py-20 bg-dark">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
-          <div>
-            <p class="text-primary uppercase tracking-[0.35em] text-xs font-semibold">Por que Urso?</p>
-            <h2 class="text-3xl sm:text-4xl font-display">Diferenciais que geram confiança</h2>
-          </div>
-          <p class="text-gray-300 max-w-xl">Da matéria-prima ao pós-venda, nosso padrão é de competição. Sinta a diferença desde o primeiro pedido.</p>
-        </div>
-        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          <div class="bg-charcoal/80 rounded-3xl border border-white/5 p-8 space-y-4">
-            <div class="text-4xl text-primary">⚡</div>
-            <h3 class="text-xl font-semibold">Entrega Relâmpago</h3>
-            <p class="text-sm text-gray-300">Envio em até 24h para capitais com rastreio em tempo real e opção de retirada express.</p>
-          </div>
-          <div class="bg-charcoal/80 rounded-3xl border border-white/5 p-8 space-y-4">
-            <div class="text-4xl text-primary">🛡️</div>
-            <h3 class="text-xl font-semibold">Garantia Total</h3>
-            <p class="text-sm text-gray-300">30 dias para testar ou trocamos sem burocracia. Nossa missão é levar performance para você.</p>
-          </div>
-          <div class="bg-charcoal/80 rounded-3xl border border-white/5 p-8 space-y-4">
-            <div class="text-4xl text-primary">✅</div>
-            <h3 class="text-xl font-semibold">Aprovação ANVISA</h3>
-            <p class="text-sm text-gray-300">Fórmulas com rastreabilidade total, laudos independentes e selo de conformidade nacional.</p>
-          </div>
-          <div class="bg-charcoal/80 rounded-3xl border border-white/5 p-8 space-y-4">
-            <div class="text-4xl text-primary">🤝</div>
-            <h3 class="text-xl font-semibold">Coaching Personalizado</h3>
-            <p class="text-sm text-gray-300">Time de especialistas para montar protocolos conforme seu objetivo e rotina de treinos.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Top vendidos -->
-    <section id="top-vendidos" class="py-20 bg-gradient-to-b from-dark via-charcoal to-dark">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
-          <div>
-            <p class="text-primary uppercase tracking-[0.35em] text-xs font-semibold">Escolhas da alcateia</p>
-            <h2 class="text-3xl sm:text-4xl font-display">Top vendidos</h2>
-          </div>
-          <p class="text-gray-300 max-w-xl">Produtos com maior taxa de recompra e avaliação 5 estrelas. Estoque limitado - garanta o seu.</p>
-        </div>
-        <div class="grid gap-8 md:grid-cols-3">
-          <article class="bg-charcoal/80 rounded-3xl border border-primary/40 p-6 flex flex-col shadow-lg shadow-black/40">
-            <img src="https://images.unsplash.com/photo-1589810264340-0ce27bfbf751?auto=format&fit=crop&w=600&q=80" alt="Whey" class="rounded-2xl object-cover h-48 w-full" />
-            <div class="mt-6 space-y-4">
-              <h3 class="text-xl font-semibold">Whey Protein Noite Selvagem</h3>
-              <p class="text-sm text-gray-300">Blend isolado + hidrolisado, 26g de proteína por dose, zero lactose.</p>
-              <div class="flex items-center justify-between">
-                <span class="text-2xl font-display text-primary">R$ 189</span>
-                <span class="text-sm text-gray-300">4.9 ★</span>
-              </div>
-              <button class="w-full py-3 rounded-full bg-primary font-semibold shadow-md shadow-primary/40 hover:shadow-primary/60 transition">Adicionar ao carrinho</button>
-            </div>
+    <section id="produtos">
+      <div class="container">
+        <p class="section-title">Arsenal em destaque</p>
+        <h2 class="section-heading">Produtos para dominar limites</h2>
+        <p class="section-description">
+          Selecione a munição certa para cada fase da batalha. Todos os produtos são fabricados com controle rigoroso e testados pela comunidade Urso.
+        </p>
+        <div class="products-grid">
+          <article class="product-card">
+            <img src="assets/img/protein.png" alt="Whey Urso" />
+            <h3>Whey Urso</h3>
+            <p>24g de proteína por dose, baixo teor de carbo e enzimas digestivas para absorção máxima.</p>
+            <a href="#">Ver produtos</a>
           </article>
-          <article class="bg-charcoal/80 rounded-3xl border border-white/10 p-6 flex flex-col shadow-lg shadow-black/40">
-            <img src="https://images.unsplash.com/photo-1546484396-fb3fc6f95f19?auto=format&fit=crop&w=600&q=80" alt="Pré-treino" class="rounded-2xl object-cover h-48 w-full" />
-            <div class="mt-6 space-y-4">
-              <h3 class="text-xl font-semibold">Pré-treino Beast Mode</h3>
-              <p class="text-sm text-gray-300">Cafeína microdosada, citrulina malato e nootrópicos para foco total.</p>
-              <div class="flex items-center justify-between">
-                <span class="text-2xl font-display text-primary">R$ 149</span>
-                <span class="text-sm text-gray-300">4.8 ★</span>
-              </div>
-              <button class="w-full py-3 rounded-full bg-white text-dark font-semibold hover:bg-primary hover:text-white transition">Adicionar ao carrinho</button>
-            </div>
+          <article class="product-card">
+            <img src="assets/img/garra.png" alt="Creatina Urso" />
+            <h3>Creatina Urso</h3>
+            <p>Monohidratada micronizada. Potência comprovada em ciclos curtos ou crônicos.</p>
+            <a href="#">Domine seu território</a>
           </article>
-          <article class="bg-charcoal/80 rounded-3xl border border-white/10 p-6 flex flex-col shadow-lg shadow-black/40">
-            <img src="https://images.unsplash.com/photo-1579722826048-71a5e91a2c87?auto=format&fit=crop&w=600&q=80" alt="Creatina" class="rounded-2xl object-cover h-48 w-full" />
-            <div class="mt-6 space-y-4">
-              <h3 class="text-xl font-semibold">Creatina Monohidratada Creapure</h3>
-              <p class="text-sm text-gray-300">Selo Creapure®, máxima pureza para força e explosão.</p>
-              <div class="flex items-center justify-between">
-                <span class="text-2xl font-display text-primary">R$ 129</span>
-                <span class="text-sm text-gray-300">5.0 ★</span>
-              </div>
-              <button class="w-full py-3 rounded-full bg-primary font-semibold shadow-md shadow-primary/40 hover:shadow-primary/60 transition">Adicionar ao carrinho</button>
-            </div>
+          <article class="product-card">
+            <img src="assets/img/produto-2.png" alt="Aminoácidos Urso" />
+            <h3>Aminoácidos</h3>
+            <p>Blend com BCAAs 2:1:1, glutamina e eletrólitos para recuperação selvagem.</p>
+            <a href="#">Seja Urso</a>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Blog -->
-    <section id="blog" class="py-20 bg-dark">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
-          <div>
-            <p class="text-primary uppercase tracking-[0.35em] text-xs font-semibold">Conteúdo de performance</p>
-            <h2 class="text-3xl sm:text-4xl font-display">Blog Urso Lab</h2>
-          </div>
-          <a href="#" class="text-sm font-semibold text-primary hover:underline">Ver todos os artigos</a>
-        </div>
-        <div class="grid gap-8 md:grid-cols-3">
-          <article class="bg-charcoal/80 rounded-3xl overflow-hidden border border-white/10 flex flex-col">
-            <img src="https://images.unsplash.com/photo-1584467735815-f778f274e89c?auto=format&fit=crop&w=800&q=80" alt="Treino" class="h-48 w-full object-cover" />
-            <div class="p-6 space-y-4">
-              <span class="text-xs uppercase tracking-[0.3em] text-primary">Treino</span>
-              <h3 class="text-xl font-semibold">Protocolos HIIT para secar mantendo força</h3>
-              <p class="text-sm text-gray-300">Estratégias avançadas combinando HIIT e força máxima para definir sem perder massa.</p>
-              <a href="#" class="text-primary font-semibold">Ler artigo →</a>
-            </div>
+          <article class="product-card">
+            <img src="assets/img/energy.png" alt="Predador Energético" />
+            <h3>Predador</h3>
+            <p>Potência total antes do treino. Energia intensa, foco agressivo, zero queda.</p>
+            <a href="#">Ver linha Predador</a>
           </article>
-          <article class="bg-charcoal/80 rounded-3xl overflow-hidden border border-white/10 flex flex-col">
-            <img src="https://images.unsplash.com/photo-1549068106-b024baf5062d?auto=format&fit=crop&w=800&q=80" alt="Nutrição" class="h-48 w-full object-cover" />
-            <div class="p-6 space-y-4">
-              <span class="text-xs uppercase tracking-[0.3em] text-primary">Nutrição</span>
-              <h3 class="text-xl font-semibold">Como periodizar whey e caseína no off-season</h3>
-              <p class="text-sm text-gray-300">Guia completo para aproveitar absorção e timing proteico como os pros.</p>
-              <a href="#" class="text-primary font-semibold">Ler artigo →</a>
-            </div>
-          </article>
-          <article class="bg-charcoal/80 rounded-3xl overflow-hidden border border-white/10 flex flex-col">
-            <img src="https://images.unsplash.com/photo-1556139943-4bdca53adf1e?auto=format&fit=crop&w=800&q=80" alt="Suplementação" class="h-48 w-full object-cover" />
-            <div class="p-6 space-y-4">
-              <span class="text-xs uppercase tracking-[0.3em] text-primary">Suplementação</span>
-              <h3 class="text-xl font-semibold">5 stacks comprovados para explosão e foco</h3>
-              <p class="text-sm text-gray-300">Combinados vencedores dos atletas Urso para cada fase da periodização.</p>
-              <a href="#" class="text-primary font-semibold">Ler artigo →</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="py-20 bg-gradient-to-b from-dark via-charcoal to-dark">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12 space-y-4">
-          <p class="text-primary uppercase tracking-[0.35em] text-xs font-semibold">Tire suas dúvidas</p>
-          <h2 class="text-3xl sm:text-4xl font-display">FAQ Urso</h2>
-          <p class="text-gray-300">Perguntas frequentes sobre entrega, garantia, segurança e suporte. Clique para expandir.</p>
-        </div>
-        <div class="space-y-4">
-          <div class="faq-item border border-white/10 rounded-2xl overflow-hidden">
-            <button class="faq-toggle w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-lg bg-charcoal/80">
-              Como funciona a entrega expressa?
-              <span class="text-primary text-2xl">+</span>
-            </button>
-            <div class="faq-content px-6 pb-4 hidden text-gray-300 text-sm">
-              Enviamos em até 24h úteis e oferecemos entrega same-day para capitais selecionadas. Você acompanha tudo pelo app Urso Tracker.
-            </div>
-          </div>
-          <div class="faq-item border border-white/10 rounded-2xl overflow-hidden">
-            <button class="faq-toggle w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-lg bg-charcoal/80">
-              Os produtos têm aprovação da ANVISA?
-              <span class="text-primary text-2xl">+</span>
-            </button>
-            <div class="faq-content px-6 pb-4 hidden text-gray-300 text-sm">
-              Sim, todos os suplementos possuem registro na ANVISA e laudos de qualidade de laboratórios independentes.
-            </div>
-          </div>
-          <div class="faq-item border border-white/10 rounded-2xl overflow-hidden">
-            <button class="faq-toggle w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-lg bg-charcoal/80">
-              Posso montar um protocolo personalizado?
-              <span class="text-primary text-2xl">+</span>
-            </button>
-            <div class="faq-content px-6 pb-4 hidden text-gray-300 text-sm">
-              Claro! Basta responder ao nosso quiz e um coach Urso enviará um protocolo com suplementos, dosagens e plano alimentar.
-            </div>
-          </div>
-          <div class="faq-item border border-white/10 rounded-2xl overflow-hidden">
-            <button class="faq-toggle w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-lg bg-charcoal/80">
-              Há garantia caso eu não goste dos resultados?
-              <span class="text-primary text-2xl">+</span>
-            </button>
-            <div class="faq-content px-6 pb-4 hidden text-gray-300 text-sm">
-              Você tem 30 dias para testar. Não atingiu o resultado? Reembolsamos ou ajustamos seu plano sem custo.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Instagram Feed -->
-    <section class="py-20 bg-dark">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
-          <div>
-            <p class="text-primary uppercase tracking-[0.35em] text-xs font-semibold">#TimeUrso</p>
-            <h2 class="text-3xl sm:text-4xl font-display">Feed do Instagram</h2>
-          </div>
-          <a href="https://instagram.com" class="text-sm font-semibold text-primary hover:underline">Marque @UrsoOficial</a>
-        </div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-          <div class="aspect-square rounded-3xl overflow-hidden"><img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=400&q=80" alt="Post 1" class="w-full h-full object-cover hover:scale-105 transition" /></div>
-          <div class="aspect-square rounded-3xl overflow-hidden"><img src="https://images.unsplash.com/photo-1549476464-37392f717541?auto=format&fit=crop&w=400&q=80" alt="Post 2" class="w-full h-full object-cover hover:scale-105 transition" /></div>
-          <div class="aspect-square rounded-3xl overflow-hidden"><img src="https://images.unsplash.com/photo-1526506118080-60ce8714f8c5?auto=format&fit=crop&w=400&q=80" alt="Post 3" class="w-full h-full object-cover hover:scale-105 transition" /></div>
-          <div class="aspect-square rounded-3xl overflow-hidden"><img src="https://images.unsplash.com/photo-1521804906057-1df8fdb718b2?auto=format&fit=crop&w=400&q=80" alt="Post 4" class="w-full h-full object-cover hover:scale-105 transition" /></div>
-          <div class="aspect-square rounded-3xl overflow-hidden"><img src="https://images.unsplash.com/photo-1548690596-c64d3e09db40?auto=format&fit=crop&w=400&q=80" alt="Post 5" class="w-full h-full object-cover hover:scale-105 transition" /></div>
-          <div class="aspect-square rounded-3xl overflow-hidden"><img src="https://images.unsplash.com/photo-1546484959-f9a94e90b9b9?auto=format&fit=crop&w=400&q=80" alt="Post 6" class="w-full h-full object-cover hover:scale-105 transition" /></div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="bg-charcoal border-t border-white/10">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
-      <p>© 2024 Urso Nutrition. Todos os direitos reservados.</p>
-      <div class="flex items-center gap-6">
-        <a href="#" class="hover:text-primary">Política de privacidade</a>
-        <a href="#" class="hover:text-primary">Termos de uso</a>
-        <a href="#" class="hover:text-primary">Suporte</a>
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="brand" style="font-size: 1.5rem; letter-spacing: 0.24em;">URSO</span>
+        <p>
+          “Pense como um urso. Que internaliza a força bruta. Aja como um urso. Aqui, a preguiça hiberna para sempre. Então seja Urso ou saia do caminho.”
+        </p>
+        <a class="cta-button" style="justify-self: start; background: transparent; border: 1px solid rgba(255,255,255,0.25); color: var(--urso-yellow); box-shadow: none;"
+          href="#">Entre para a alcateia</a>
+      </div>
+      <div class="footer-links">
+        <a href="#porque">Cultura Urso</a>
+        <a href="#produtos">Loja</a>
+        <a href="#predador">Linha Predador</a>
+        <a href="#comunidade">Comunidade</a>
+      </div>
+      <div class="footer-links">
+        <a href="#">Blog</a>
+        <a href="#">Distribuidores</a>
+        <a href="#">Suporte</a>
+        <a href="#">Políticas</a>
       </div>
     </div>
   </footer>
-
-  <script>
-    // Countdown de 48h
-    const countdownElement = document.getElementById('countdown');
-    const targetDate = new Date();
-    targetDate.setHours(targetDate.getHours() + 48);
-
-    function updateCountdown() {
-      const now = new Date();
-      const diff = targetDate - now;
-      if (diff <= 0) {
-        countdownElement.textContent = 'Oferta encerrada';
-        clearInterval(countdownInterval);
-        return;
-      }
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 48);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-      countdownElement.innerHTML = `
-        <div class="flex flex-col items-center bg-charcoal/80 border border-white/10 rounded-2xl px-4 py-3">
-          <span>${String(hours).padStart(2, '0')}</span>
-          <span class="text-xs text-gray-400 uppercase tracking-[0.3em]">Horas</span>
-        </div>
-        <div class="flex flex-col items-center bg-charcoal/80 border border-white/10 rounded-2xl px-4 py-3">
-          <span>${String(minutes).padStart(2, '0')}</span>
-          <span class="text-xs text-gray-400 uppercase tracking-[0.3em]">Min</span>
-        </div>
-        <div class="flex flex-col items-center bg-charcoal/80 border border-white/10 rounded-2xl px-4 py-3">
-          <span>${String(seconds).padStart(2, '0')}</span>
-          <span class="text-xs text-gray-400 uppercase tracking-[0.3em]">Seg</span>
-        </div>`;
-    }
-    const countdownInterval = setInterval(updateCountdown, 1000);
-    updateCountdown();
-
-    // FAQ toggle
-    document.querySelectorAll('.faq-toggle').forEach((button) => {
-      button.addEventListener('click', () => {
-        const content = button.nextElementSibling;
-        const icon = button.querySelector('span');
-        content.classList.toggle('hidden');
-        icon.textContent = content.classList.contains('hidden') ? '+' : '-';
-      });
-    });
-  </script>
 </body>
 
 </html>
