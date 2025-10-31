@@ -140,9 +140,11 @@
       </div>
     </section>
 
-    <section id="banner">
-      <div class="mt-8 max-w-[1100px] mx-auto rounded-2xl h-[300px] overflow-hidden flex justify-center items-center">
-        <video class="w-full object-cover" src="./assets/video/cena2_Ly1bPiOX.mp4" autoplay muted loop></video>
+    <section id="banner" class="px-4">
+      <div
+        class="my-6 sm:my-8 md:my-12 max-w-[1100px] mx-auto rounded-2xl h-[260px] sm:h-[300px] overflow-hidden flex justify-center items-center">
+        <video class="w-full h-full object-cover scale-110 sm:scale-100 transition-transform" src="./assets/video/cena2_Ly1bPiOX.mp4"
+          autoplay muted loop></video>
       </div>
 
     </section>
@@ -572,7 +574,7 @@
     </section>
 
     <!-- Jornada Overlay -->
-    <div id="journeyOverlay" class="fixed inset-0 z-[60]">
+    <div id="journeyOverlay" class="fixed inset-0 z-[60] hidden">
       <div class="absolute inset-0 bg-black/80 backdrop-blur"></div>
       <div class="relative z-10 flex h-full w-full items-start justify-center p-4 sm:p-8">
         <div
