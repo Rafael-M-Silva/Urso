@@ -4,750 +4,1275 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Urso Suplementos – Whey, Creatina, Aminoácidos & Energético Predador</title>
-  <meta name="description"
-    content="Treine com garra. Suplementos Urso: whey premium, creatina potente, aminoácidos e a linha Predador de energéticos. Seja Urso. Domine." />
+  <title>Urso Supplements</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Anton', 'sans-serif'],
+            body: ['Montserrat', 'sans-serif']
+          },
+          colors: {
+            primary: '#FFC600',
+            dark: '#08090B',
+            charcoal: '#1C1F26',
+            ursoGold: '#FFC600',
+            ursoDark: '#08090B',
+          },
+          backgroundImage: {
+            hero: "linear-gradient(100deg, #000, #FFC60012), url('./assets/img/banner.png')"
+          }
+        }
+      }
+
+    }
+  </script>
   <style>
-    :root {
-      --urso-yellow: #ffc600;
-      --urso-black: #2d3326;
-      --urso-off-black: #12140f;
-      --urso-gray: #d2d4cc;
-      --urso-dark-gray: rgba(255, 255, 255, 0.08);
-      --font-primary: 'Gilroy', 'Gilroy-Bold', 'Gilroy-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      font-family: var(--font-primary);
-      background-color: var(--urso-off-black);
-      color: #f7f7f2;
-      line-height: 1.6;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #0d0f13;
+      color: #f3f4f6;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(18, 20, 15, 0.95);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .container {
-      width: min(1120px, 92vw);
-      margin: 0 auto;
-    }
-
-    .nav-bar {
+    .animate-marquee {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      padding: 1rem 0;
+      animation: marquee 15s linear infinite;
+      width: max-content;
     }
 
-    .brand {
-      font-size: 1.75rem;
-      letter-spacing: 0.28em;
-      font-weight: 700;
-      color: var(--urso-yellow);
+    /* Scrollbar personalizado (Webkit — Chrome, Edge, Safari) */
+    ::-webkit-scrollbar {
+      width: 8px;
     }
 
-    .nav-links {
-      display: none;
-      align-items: center;
-      gap: 1.5rem;
-      font-size: 0.85rem;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
+    ::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 9999px;
     }
 
-    .nav-links a:hover {
-      color: var(--urso-yellow);
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #FFC600, #B8860B);
+      border-radius: 9999px;
+      border: 2px solid rgba(0, 0, 0, 0.5);
     }
 
-    .cta-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.85rem 1.75rem;
-      background: var(--urso-yellow);
-      color: var(--urso-black);
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      box-shadow: 0 14px 30px rgba(255, 198, 0, 0.22);
-    }
-
-    .cta-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 36px rgba(255, 198, 0, 0.32);
-    }
-
-    .hero {
-      background: radial-gradient(circle at top, rgba(255, 198, 0, 0.16), rgba(18, 20, 15, 0.92)), var(--urso-black);
-      padding: 5rem 0 4rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1400&q=80') center/cover;
-      opacity: 0.18;
-      mix-blend-mode: screen;
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      gap: 1.75rem;
-    }
-
-    .hero-tagline {
-      text-transform: uppercase;
-      letter-spacing: 0.32em;
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.62);
-    }
-
-    .hero h1 {
-      font-size: clamp(2.3rem, 6vw, 4.2rem);
-      line-height: 1.1;
-      text-transform: uppercase;
-    }
-
-    .hero h1 strong {
-      color: var(--urso-yellow);
-    }
-
-    .hero p {
-      max-width: 540px;
-      color: rgba(255, 255, 255, 0.74);
-      font-size: 1rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      max-width: 360px;
-    }
-
-    .hero-actions .secondary {
-      background: transparent;
-      color: var(--urso-yellow);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      box-shadow: none;
-    }
-
-    .hero-actions .secondary:hover {
-      background: rgba(255, 198, 0, 0.12);
-    }
-
-    section {
-      padding: 4rem 0;
-    }
-
-    .section-title {
-      text-transform: uppercase;
-      letter-spacing: 0.28em;
-      font-size: 0.8rem;
-      color: var(--urso-yellow);
-      margin-bottom: 1.25rem;
-    }
-
-    .section-heading {
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-    }
-
-    .section-description {
-      color: rgba(255, 255, 255, 0.68);
-      max-width: 620px;
-      margin-bottom: 2.5rem;
-    }
-
-    .grid {
-      display: grid;
-      gap: 1.5rem;
-    }
-
-    .why-card {
-      display: grid;
-      gap: 1rem;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid var(--urso-dark-gray);
-      padding: 1.5rem;
-      border-radius: 1.5rem;
-    }
-
-    .why-card h3 {
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 1rem;
-      color: var(--urso-yellow);
-    }
-
-    .why-card p {
-      color: rgba(255, 255, 255, 0.72);
-      font-size: 0.95rem;
-    }
-
-    .objectives-grid {
-      display: grid;
-      gap: 1.5rem;
-    }
-
-    .objective-card {
-      position: relative;
-      border-radius: 1.75rem;
-      overflow: hidden;
-      min-height: 320px;
-      background: rgba(255, 255, 255, 0.04);
-      display: grid;
-      align-content: flex-end;
-    }
-
-    .objective-card img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: grayscale(20%) contrast(110%);
-      opacity: 0.45;
-    }
-
-    .objective-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(18, 20, 15, 0) 25%, rgba(18, 20, 15, 0.94) 100%);
-    }
-
-    .objective-content {
-      position: relative;
-      z-index: 2;
-      padding: 2rem;
-      display: grid;
-      gap: 0.75rem;
-    }
-
-    .objective-content span {
-      text-transform: uppercase;
-      letter-spacing: 0.28em;
-      font-size: 0.75rem;
-      color: rgba(255, 255, 255, 0.68);
-    }
-
-    .objective-content h3 {
-      font-size: 1.8rem;
-      text-transform: uppercase;
-    }
-
-    .objective-content p {
-      color: rgba(255, 255, 255, 0.72);
-      font-size: 0.95rem;
-    }
-
-    .objective-content a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      font-size: 0.8rem;
-      color: var(--urso-yellow);
-    }
-
-    .predador-section {
-      background: var(--urso-yellow);
-      color: var(--urso-black);
-      border-radius: 2rem;
-      padding: 3rem 2rem;
-      display: grid;
-      gap: 2rem;
-    }
-
-    .predador-header {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .predador-header h2 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .predador-header p {
-      color: rgba(45, 51, 38, 0.8);
-      max-width: 520px;
-    }
-
-    .predador-grid {
-      display: grid;
-      gap: 1.5rem;
-    }
-
-    .predador-card {
-      background: rgba(0, 0, 0, 0.08);
-      border-radius: 1.5rem;
-      padding: 1.5rem;
-      display: grid;
-      gap: 0.75rem;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .predador-card h3 {
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.95rem;
-    }
-
-    .predador-card p {
-      color: rgba(45, 51, 38, 0.8);
-      font-size: 0.9rem;
-    }
-
-    .testimonials {
-      display: grid;
-      gap: 1.5rem;
-    }
-
-    .testimonial-card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--urso-dark-gray);
-      border-radius: 1.75rem;
-      padding: 2rem;
-      display: grid;
-      gap: 1rem;
-    }
-
-    .testimonial-meta {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .testimonial-meta img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .testimonial-meta div {
-      display: grid;
-      gap: 0.15rem;
-    }
-
-    .testimonial-meta span {
-      text-transform: uppercase;
-      letter-spacing: 0.24em;
-      font-size: 0.65rem;
-      color: var(--urso-yellow);
-    }
-
-    .products-grid {
-      display: grid;
-      gap: 1.5rem;
-    }
-
-    .product-card {
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid var(--urso-dark-gray);
-      border-radius: 1.5rem;
-      padding: 1.5rem;
-      display: grid;
-      gap: 1rem;
-      text-align: center;
-    }
-
-    .product-card h3 {
-      text-transform: uppercase;
-      font-size: 1.1rem;
-    }
-
-    .product-card p {
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 0.9rem;
-    }
-
-    .product-card a {
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      font-size: 0.75rem;
-      color: var(--urso-yellow);
-    }
-
-    footer {
-      background: var(--urso-black);
-      padding: 3rem 0;
-      margin-top: 4rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .footer-grid {
-      display: grid;
-      gap: 2rem;
-    }
-
-    .footer-brand {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .footer-brand p {
-      color: rgba(255, 255, 255, 0.7);
-      max-width: 420px;
-    }
-
-    .footer-links {
-      display: grid;
-      gap: 1.25rem;
-      text-transform: uppercase;
-      letter-spacing: 0.24em;
-      font-size: 0.75rem;
-    }
-
-    .footer-links a:hover {
-      color: var(--urso-yellow);
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(255, 198, 0, 0.12);
-      color: var(--urso-yellow);
-      padding: 0.65rem 1.1rem;
-      border-radius: 999px;
-      text-transform: uppercase;
-      letter-spacing: 0.28em;
-      font-size: 0.7rem;
-    }
-
-    @media (min-width: 640px) {
-      .hero {
-        padding: 6rem 0 5rem;
-      }
-
-      .hero-actions {
-        flex-direction: row;
-      }
-
-      .predador-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .testimonials {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .products-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (min-width: 768px) {
-      .nav-links {
-        display: flex;
-      }
-
-      .why-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .objectives-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .predador-section {
-        grid-template-columns: 1.1fr 1fr;
-        align-items: center;
-      }
-
-      .products-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-
-      .footer-grid {
-        grid-template-columns: 1.1fr 0.9fr 0.9fr;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .hero {
-        padding: 7rem 0 6rem;
-      }
-
-      .hero-content {
-        gap: 2rem;
-        max-width: 680px;
-      }
-
-      .objectives-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, #FFD84A, #E8B400);
     }
   </style>
 </head>
 
-<body>
-  <header>
-    <div class="container nav-bar">
-      <a class="brand" href="#inicio">URSO</a>
-      <nav class="nav-links">
-        <a href="#porque">Por que Urso?</a>
-        <a href="#objetivos">Objetivos</a>
-        <a href="#predador">Predador</a>
-        <a href="#produtos">Produtos</a>
-        <a href="#comunidade">Comunidade</a>
+<body class="bg-dark text-gray-100">
+  <header class="sticky top-0 z-50 bg-dark/95 backdrop-blur border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-4">
+      <div class="flex items-center gap-3">
+        <span class="text-primary text-3xl font-display tracking-widest">URSO</span>
+
+      </div>
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+        <a href="#objetivos" class="hover:text-primary transition">Arsenal</a>
+        <a href="#kits" class="hover:text-primary transition">Kits</a>
+        <a href="#jornada" class="hover:text-primary transition">Jornada</a>
       </nav>
-      <a class="cta-button" href="#produtos">Domine seu território</a>
+      <div class="flex items-center gap-4">
+        <input type="search" placeholder="Buscar suplementos"
+          class="hidden md:block bg-charcoal text-sm px-4 py-2 rounded-full border border-white/10 focus:outline-none focus:ring-2 focus:ring-primary/70" />
+        <a href="#kits"
+          class="px-4 py-2 bg-primary text-dark font-semibold rounded-full shadow-lg shadow-primary/40 hover:shadow-primary/60 transition">Comprar
+          Agora</a>
+      </div>
     </div>
   </header>
 
   <main>
-    <section id="inicio" class="hero">
-      <div class="container hero-content">
-        <span class="hero-tagline">Força bruta · energia intensa · recuperação rápida</span>
-        <h1>Treine como <strong>Urso</strong>. <br />Domine. Não peça licença.</h1>
-        <p>
-          Fórmulas desenvolvidas para quem treina pesado e não aceita desculpas.
-          Whey brasileiro de alta performance, creatina potente, aminoácidos cirúrgicos e a linha Predador para iniciar a caçada.
-        </p>
-        <div class="hero-actions">
-          <a class="cta-button" href="#predador">Comece a caçada</a>
-          <a class="cta-button secondary" href="#objetivos">Monte seu arsenal</a>
-        </div>
-        <div class="badge">Velocidade mata a concorrência</div>
-      </div>
-    </section>
-
-    <section id="porque">
-      <div class="container">
-        <p class="section-title">Cultura urso</p>
-        <h2 class="section-heading">Pense como um urso. Aja como um urso.</h2>
-        <p class="section-description">
-          A Urso Suplementos nasceu da rua, da arena e dos treinos que começam antes do sol nascer.
-          Aqui a preguiça hiberna para sempre. Quem entra para a alcateia abraça a força bruta, a disciplina e a fome de vitória.
-        </p>
-        <div class="grid why-grid">
-          <article class="why-card">
-            <h3>Força bruta garantida</h3>
-            <p>Matérias-primas rastreadas, blends sem frescura e doses generosas para você dominar os limites.</p>
-          </article>
-          <article class="why-card">
-            <h3>Energia que caça</h3>
-            <p>Predador é o energético inovador para iniciar a caçada: foco, agressividade e instinto liberados em três versões.</p>
-          </article>
-          <article class="why-card">
-            <h3>Recuperação selvagem</h3>
-            <p>Whey, creatina e aminoácidos calibrados para reconstruir fibra por fibra. Se não ajuda você a vencer, fica pra trás.</p>
-          </article>
+    <!-- Hero -->
+    <section class="bg-hero bg-cover bg-center text-white [background-position:center_top_22%]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+        <div class="max-w-2xl space-y-6">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display leading-tight">DE PREDADOR PARA PREDADOR</h1>
+          <p class="text-lg text-gray-200">Para rebeldes e inconformados, a URSO Quebra limites, desafia padroes e
+            transforma suor em resultados.</p>
+          <div class="flex flex-col sm:flex-row gap-4 pt-4">
+            <button type="button" data-open-journey
+              class="px-8 py-4 bg-primary text-[#08090B] font-semibold rounded-full shadow-lg shadow-primary/40 hover:shadow-primary/60 transition">Montar
+              minha estratégia</button>
+          </div>
+          <!--   <div class="flex items-center gap-6 text-sm uppercase tracking-widest pt-6">
+            <div class="flex items-center gap-2">
+              <span class="text-3xl font-display">+320k</span>
+              <span class="text-gray-300">Atletas Urso</span>
+            </div>
+            <div class="w-px h-8 bg-white/20"></div>
+            <div class="flex items-center gap-2">
+              <span class="text-3xl font-display">98%</span>
+              <span class="text-gray-300">Satisfação</span>
+            </div>
+          </div> -->
         </div>
       </div>
     </section>
 
-    <section id="objetivos">
-      <div class="container">
-        <p class="section-title">Escolha seu território</p>
-        <h2 class="section-heading">Objetivo certo, ataque certeiro</h2>
-        <p class="section-description">
-          Navegue por meta ou categoria como na elite mundial. Selecione o instinto dominante e monte o combo perfeito.
-        </p>
-        <div class="objectives-grid">
-          <article class="objective-card">
-            <img src="https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&w=900&q=80" alt="Construir músculo" />
-            <div class="objective-content">
-              <span>Construir músculo</span>
-              <h3>Ganho de massa</h3>
-              <p>Whey Urso com 24g de proteína por dose + Creatina Monohidratada para crescimento implacável.</p>
-              <a href="#produtos">Ver produtos →</a>
+    <section class="bg-[#FFC600] py-4 overflow-hidden">
+      <div class="marquee3k" data-speed="0.4">
+        <div class="flex gap-8">
+          <div class="flex items-center gap-4 p-4">
+            <img src="./assets/img/garra.png" class="w-6 h-6">
+            <p class="font-semibold text-[#08090B]">Big Urso - Equipe 15</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="banner">
+      <div class=" mt-8 max-w-[1100px] mx-auto rounded-2xl h-[300px] overflow-hidden flex justify-center items-center">
+        <video class="w-full object-cover" src="./assets/video/cena2_Ly1bPiOX.mp4" autoplay muted loop></video>
+      </div>
+
+    </section>
+
+    <!-- Produtos por objetivo -->
+    <section id="objetivos" class="py-20 bg-gradient-to-b from-dark via-charcoal to-dark">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+          <div>
+            <p class="text-primary uppercase tracking-[0.35em] text-xs font-semibold">Objetivo certo, resultado
+              implacável</p>
+            <h2 class="text-3xl sm:text-4xl font-display">Arsenal Urso</h2>
+          </div>
+          <p class="text-gray-300 max-w-xl">Aja como um urso.
+            Que protege aquilo que acredita.
+            Que se recupera para voltar mais forte.
+            Que não pede licença, toma o espaço.</p>
+        </div>
+        <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+
+          <article
+            class="group bg-charcoal/80 border border-white/5 rounded-3xl overflow-hidden shadow-xl shadow-black/50 hover:border-primary/50 transition">
+            <div class="h-48 bg-cover bg-center" style="background-image:url('./assets/img/lata1.png')">
+            </div>
+            <div class="p-8 space-y-4">
+              <span class="text-primary font-semibold uppercase tracking-[0.3em] text-xs">ENERGY</span>
+              <h3 class="text-2xl font-display">PREDADOR ENERGY – Explosão de Foco e Disposição</h3>
+              <p class="text-gray-300 text-sm">Cafeína + Taurina + Gaseificação inteligente pra ativar o cérebro,
+                acelerar o corpo.</p>
+              <button class="flex items-center gap-2 text-primary font-semibold">Comprar <span
+                  aria-hidden="true">→</span></button>
             </div>
           </article>
-          <article class="objective-card">
-            <img src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=900&q=80" alt="Energia máxima" />
-            <div class="objective-content">
-              <span>Energia máxima</span>
-              <h3>Linha Predador</h3>
-              <p>Três fórmulas de ataque: pré-treino, energia diária e concentração letal. Tome o espaço antes de todos.</p>
-              <a href="#predador">Iniciar caçada →</a>
+          <article
+            class="group bg-charcoal/80 border border-white/5 rounded-3xl overflow-hidden shadow-xl shadow-black/50 hover:border-primary/50 transition">
+            <div class="h-48 bg-cover bg-center" style="background-image:url('./assets/img/lata2.png')">
+            </div>
+            <div class="p-8 space-y-4">
+              <span class="text-primary font-semibold uppercase tracking-[0.3em] text-xs">PROTEIN</span>
+              <h3 class="text-2xl font-display">PREDADOR PROTEIN – Força no Estado Líquido</h3>
+              <p class="text-gray-300 text-sm">Tecnologia exclusiva que une proteína de alto valor biológico com
+                refrescância e absorção rápida.</p>
+              <button class="flex items-center gap-2 text-primary font-semibold">Comprar <span
+                  aria-hidden="true">→</span></button>
             </div>
           </article>
-          <article class="objective-card">
-            <img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?auto=format&fit=crop&w=900&q=80" alt="Recuperação" />
-            <div class="objective-content">
-              <span>Recuperação total</span>
-              <h3>Aminoácidos</h3>
-              <p>BCAAs, glutamina e eletrólitos para reconstruir mais rápido e voltar ao ataque em menos tempo.</p>
-              <a href="#produtos">Domine seu território →</a>
+          <article
+            class="group bg-charcoal/80 border border-white/5 rounded-3xl overflow-hidden shadow-xl shadow-black/50 hover:border-primary/50 transition">
+            <div class="h-48 bg-cover bg-center" style="background-image:url('./assets/img/lata3.png')">
+            </div>
+            <div class="p-8 space-y-4">
+              <span class="text-primary font-semibold uppercase tracking-[0.3em] text-xs">Definição</span>
+              <h3 class="text-2xl font-display">PREDADOR SAÚDE – Imunidade e Equilíbrio com Gás</h3>
+              <p class="text-gray-300 text-sm">Seu corpo é sua armadura. E essa lata é seu escudo. Minerais e
+                antioxidantes pra fortalecer seu corre diário.</p>
+              <button class="flex items-center gap-2 text-primary font-semibold">Comprar <span
+                  aria-hidden="true">→</span></button>
+            </div>
+          </article>
+          <article
+            class="group bg-charcoal/80 border border-white/5 rounded-3xl overflow-hidden shadow-xl shadow-black/50 hover:border-primary/50 transition">
+            <div class="h-48 bg-cover bg-center" style="background-image:url('./assets/img/produto.png')">
+            </div>
+            <div class="p-8 space-y-4">
+              <span class="text-primary font-semibold uppercase tracking-[0.3em] text-xs">PREDADOR WHEY</span>
+              <h3 class="text-2xl font-display">PREDADOR WHEY – CHOCOLATE SELVAGEM</h3>
+              <p class="text-gray-300 text-sm">Sabor de chocolate. Potência de 25g de proteina monstro.</p>
+              <button class="flex items-center gap-2 text-primary font-semibold">Comprar <span
+                  aria-hidden="true">→</span></button>
+            </div>
+          </article>
+          <article
+            class="group bg-charcoal/80 border border-white/5 rounded-3xl overflow-hidden shadow-xl shadow-black/50 hover:border-primary/50 transition">
+            <div class="h-48 bg-cover bg-center" style="background-image:url('./assets/img/produto-2.png')">
+            </div>
+            <div class="p-8 space-y-4">
+              <span class="text-primary font-semibold uppercase tracking-[0.3em] text-xs">BAUNILHA BRUTA</span>
+              <h3 class="text-2xl font-display">PREDADOR WHEY – BAUNILHA BRUTA</h3>
+              <p class="text-gray-300 text-sm">O sabor suave da baunilha com a pancada de 25g de proteína pura.
+              </p>
+              <button class="flex items-center gap-2 text-primary font-semibold">Comprar <span
+                  aria-hidden="true">→</span></button>
+            </div>
+          </article>
+          <article
+            class="group bg-charcoal/80 border border-white/5 rounded-3xl overflow-hidden shadow-xl shadow-black/50 hover:border-primary/50 transition">
+            <div class="h-48 bg-cover bg-center" style="background-image:url('./assets/img/produto.png')">
+            </div>
+            <div class="p-8 space-y-4">
+              <span class="text-primary font-semibold uppercase tracking-[0.3em] text-xs">PREDADOR WHEY</span>
+              <h3 class="text-2xl font-display">PREDADOR WHEY – CHOCOLATE SELVAGEM</h3>
+              <p class="text-gray-300 text-sm">Sabor de chocolate. Potência de 25g de proteina monstro.</p>
+              <button class="flex items-center gap-2 text-primary font-semibold">Comprar <span
+                  aria-hidden="true">→</span></button>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="predador" class="container">
-      <div class="predador-section">
-        <div class="predador-header">
-          <span class="badge" style="background: rgba(0,0,0,0.08); color: var(--urso-black);">Predador</span>
-          <h2>Energia para caçar. Instinto para finalizar.</h2>
-          <p>
-            Predador é a linha de energéticos premium da Urso. Criada para liberar instintos selvagens: foco extremo, agressividade controlada e recuperação acelerada entre rounds. Sem crash, só ataque.
-          </p>
-          <a class="cta-button" style="justify-self: start; background: var(--urso-black); color: var(--urso-yellow); box-shadow: none;"
-            href="#produtos">Ver linha Predador</a>
+    <!-- Kits Promocionais -->
+    <section id="kits" class="py-20 bg-[radial-gradient(circle_at_top,_#2a2e37,_#0d0f13_70%)]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 mb-12">
+          <div>
+            <p class="text-primary uppercase tracking-[0.35em] text-xs font-semibold">Oferta limitada</p>
+            <h2 class="text-3xl sm:text-4xl font-display">Kit promocionail</h2>
+          </div>
+          <div class="text-center lg:text-right">
+
+            <p class="text-gray-300 text-sm uppercase tracking-[0.3em]">Termina em</p>
+            <div id="countdown" class="mt-2 flex justify-center lg:justify-end gap-3 text-2xl font-display"></div>
+          </div>
         </div>
-        <div class="predador-grid">
-          <article class="predador-card">
-            <h3>Predador Pré-Treino</h3>
-            <p>Beta-alanina, citrulina e cafeína microdosada para iniciar a caçada com explosão e clareza mental.</p>
+        <div class="grid gap-8 lg:grid-cols-2">
+
+          <article class="bg-charcoal/90 border border-primary/40 rounded-3xl p-8 space-y-6 shadow-2xl shadow-black/50">
+            <span
+              class="inline-flex items-center gap-2 bg-primary/20 text-primary px-4 py-1 rounded-full text-xs uppercase tracking-[0.3em]">Exclusivo</span>
+            <h3 class="text-2xl font-display">Kit Massa Monstruosa + Camisa Predador</h3>
+            <div class="h-[400px] bg-cover bg-center bg-no-repeat" style="background-image:url('./assets/img/kit.png')">
+            </div>
+            <ul class="space-y-3 text-sm text-gray-300">
+              <li>• 1x Whey 100% Ultra Filtrado</li>
+              <li>• PREDADOR PROTEIN</li>
+              <li>• PREDADOR SAÚDE</li>
+              <li>• PREDADOR ENERGY</li>
+              <li>• Camisa Predador</li>
+            </ul>
+            <div class="flex items-end gap-3">
+              <span class="text-4xl font-display text-primary">R$ 349</span>
+              <span class="text-gray-400 line-through">R$ 489</span>
+            </div>
+            <button
+              class="w-full py-3 rounded-full bg-primary font-semibold shadow-lg shadow-primary/40 hover:shadow-primary/60 transition text-dark">Garantir
+              meu kit</button>
           </article>
-          <article class="predador-card">
-            <h3>Predador Focus</h3>
-            <p>Blend neuroativo com nootrópicos para quem domina o dia inteiro: trabalho, treino, repetição.</p>
+          <article class="bg-charcoal/90 border border-primary/40 rounded-3xl p-8 space-y-6 shadow-2xl shadow-black/50">
+            <span
+              class="inline-flex items-center gap-2 bg-primary/20 text-primary px-4 py-1 rounded-full text-xs uppercase tracking-[0.3em]">Exclusivo</span>
+            <h3 class="text-2xl font-display">Camisa Predador</h3>
+            <div class="h-[400px] bg-contain bg-center bg-no-repeat"
+              style="background-image:url('./assets/img/camisa.png')">
+            </div>
+            <ul class="space-y-3 text-sm text-gray-300">
+
+              <li>• Camisa Predador</li>
+            </ul>
+            <div class="flex items-end gap-3">
+              <span class="text-4xl font-display text-primary">R$ 79,90</span>
+              <span class="text-gray-400 line-through">R$ 150</span>
+            </div>
+            <button
+              class="w-full py-3 rounded-full bg-primary font-semibold shadow-lg shadow-primary/40 hover:shadow-primary/60 transition text-dark">Garantir
+              meu kit</button>
           </article>
-          <article class="predador-card">
-            <h3>Predador Noturno</h3>
-            <p>Recarga controlada para treinos tardios. Energia sustentável sem roubar o sono do caçador.</p>
-          </article>
+
         </div>
       </div>
     </section>
 
-    <section id="comunidade">
-      <div class="container">
-        <p class="section-title">Prova social</p>
-        <h2 class="section-heading">Errei, levantei, voltei mais forte</h2>
-        <p class="section-description">
-          Histórias da alcateia que não pede licença. Gente real, suor real, resultados de quem tomou o espaço.
-        </p>
-        <div class="testimonials">
-          <article class="testimonial-card">
-            <div class="testimonial-meta">
-              <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=120&q=80" alt="Joel" />
-              <div>
-                <strong>Joel Mota</strong>
-                <span>Treinador Urso</span>
+    <!-- Jornada de Compra -->
+    <section id="jornada" class="py-20 bg-dark border-t border-white/5">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div class="space-y-6">
+            <p class="text-primary uppercase tracking-[0.35em] text-xs font-semibold">Sua jornada Urso</p>
+            <h2 class="text-3xl sm:text-4xl font-display">Do objetivo ao "compra concluída" em minutos</h2>
+            <p class="text-gray-300">Experimente o fluxo guiado criado para maximizar conversão: escolha o objetivo,
+              monte seu stack personalizado, defina entrega e finalize o pagamento com transparência total.</p>
+            <ul class="space-y-3 text-sm text-gray-300">
+              <li class="flex items-start gap-3"><span class="text-primary mt-1">➀</span><span>Identifique o objetivo
+                  com recomendações estratégicas dos coaches Urso.</span></li>
+              <li class="flex items-start gap-3"><span class="text-primary mt-1">➁</span><span>Monte o carrinho com
+                  sugestões inteligentes e frete calculado em tempo real.</span></li>
+              <li class="flex items-start gap-3"><span class="text-primary mt-1">➂</span><span>Finalize com opções
+                  seguras de pagamento e receba a confirmação instantânea.</span></li>
+            </ul>
+            <div class="flex flex-col sm:flex-row gap-4 pt-4">
+              <button type="button" data-open-journey
+                class="px-6 py-3 bg-primary rounded-full font-semibold text-center shadow-lg shadow-primary/40 hover:shadow-primary/60 transition text-dark">Iniciar
+                jornada guiada</button>
+              <span class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-gray-400"><span
+                  class="inline-flex h-2 w-2 rounded-full bg-primary"></span>Sem compromisso</span>
+            </div>
+          </div>
+          <div class="bg-charcoal/80 border border-white/10 rounded-3xl p-8 space-y-6 shadow-2xl shadow-black/40">
+            <div class="flex items-center justify-between">
+              <p class="text-xs uppercase tracking-[0.4em] text-gray-400">Pré-visualização</p>
+              <span
+                class="px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-semibold uppercase tracking-[0.3em]">Conversão
+                +37%</span>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-center gap-4">
+                <div
+                  class="h-12 w-12 rounded-2xl bg-primary/20 text-primary flex items-center justify-center font-display text-xl">
+                  1</div>
+                <div>
+                  <p class="text-xs uppercase tracking-[0.3em] text-gray-400">Descoberta</p>
+                  <p class="font-semibold">Selecione o objetivo e stack ideal</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="h-12 w-12 rounded-2xl bg-white/10 text-primary flex items-center justify-center font-display text-xl">
+                  2</div>
+                <div>
+                  <p class="text-xs uppercase tracking-[0.3em] text-gray-400">Carrinho</p>
+                  <p class="font-semibold">Revise kits e personalize quantidades</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="h-12 w-12 rounded-2xl bg-white/10 text-primary flex items-center justify-center font-display text-xl">
+                  3</div>
+                <div>
+                  <p class="text-xs uppercase tracking-[0.3em] text-gray-400">Checkout</p>
+                  <p class="font-semibold">Defina frete, pagamento e conclua</p>
+                </div>
               </div>
             </div>
-            <p>“Treine como um urso selvagem. Com a creatina Urso, meus atletas ganharam potência sem perder precisão. Quem vende, manda.”</p>
-          </article>
-          <article class="testimonial-card">
-            <div class="testimonial-meta">
-              <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=120&q=80" alt="Nina" />
-              <div>
-                <strong>Nina Rocha</strong>
-                <span>Atleta amadora</span>
+            <div class="rounded-2xl border border-white/10 bg-dark/60 p-5 space-y-3 text-sm text-gray-300">
+              <div class="flex items-center justify-between">
+                <span>Tempo médio</span>
+                <span class="text-primary font-semibold">2 min 45s</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span>Ticket sugerido</span>
+                <span class="text-primary font-semibold">R$ 429</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span>Conversão média</span>
+                <span class="text-primary font-semibold">12,4%</span>
               </div>
             </div>
-            <p>“Predador me entrega foco inquebrável. Não adianta ter razão e perder o jogo. Com Urso eu domino o território.”</p>
-          </article>
-          <article class="testimonial-card">
-            <div class="testimonial-meta">
-              <img src="https://images.unsplash.com/photo-1526401485004-46910ecc8e51?auto=format&fit=crop&w=120&q=80" alt="Rafa" />
-              <div>
-                <strong>Rafa Vidal</strong>
-                <span>Comunidade Urso</span>
-              </div>
-            </div>
-            <p>“Aminoácidos Urso cortaram minha fadiga pós-perna. Se não ajuda a vender, ajuda a atrapalhar — aqui só fica quem joga pra ganhar.”</p>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="produtos">
-      <div class="container">
-        <p class="section-title">Arsenal em destaque</p>
-        <h2 class="section-heading">Produtos para dominar limites</h2>
-        <p class="section-description">
-          Selecione a munição certa para cada fase da batalha. Todos os produtos são fabricados com controle rigoroso e testados pela comunidade Urso.
-        </p>
-        <div class="products-grid">
-          <article class="product-card">
-            <img src="assets/img/protein.png" alt="Whey Urso" />
-            <h3>Whey Urso</h3>
-            <p>24g de proteína por dose, baixo teor de carbo e enzimas digestivas para absorção máxima.</p>
-            <a href="#">Ver produtos</a>
-          </article>
-          <article class="product-card">
-            <img src="assets/img/garra.png" alt="Creatina Urso" />
-            <h3>Creatina Urso</h3>
-            <p>Monohidratada micronizada. Potência comprovada em ciclos curtos ou crônicos.</p>
-            <a href="#">Domine seu território</a>
-          </article>
-          <article class="product-card">
-            <img src="assets/img/produto-2.png" alt="Aminoácidos Urso" />
-            <h3>Aminoácidos</h3>
-            <p>Blend com BCAAs 2:1:1, glutamina e eletrólitos para recuperação selvagem.</p>
-            <a href="#">Seja Urso</a>
-          </article>
-          <article class="product-card">
-            <img src="assets/img/energy.png" alt="Predador Energético" />
-            <h3>Predador</h3>
-            <p>Potência total antes do treino. Energia intensa, foco agressivo, zero queda.</p>
-            <a href="#">Ver linha Predador</a>
-          </article>
+    <section id="squad" class="relative py-16 sm:py-20 bg-neutral-950">
+      <div class="mx-auto max-w-6xl px-6">
+        <!-- Cabeçalho -->
+        <header class="mb-10 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
+          <div>
+            <p class="text-xs uppercase tracking-[0.35em] text-yellow-400/80">Alcateia URSO</p>
+            <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-white">Nosso Squad do Hackathon</h2>
+            <p class="mt-2 max-w-2xl text-sm text-neutral-300">
+              Um álbum para lembrar quem entrou na floresta com a gente. Clique em qualquer foto para ver em destaque.
+            </p>
+          </div>
+          <div class="flex items-center gap-3">
+            <button id="downloadRosterBtn"
+              class="rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-neutral-200 hover:border-yellow-400/60 hover:text-yellow-400 transition">
+              Baixar lista (.json)
+            </button>
+            <button id="shuffleBtn"
+              class="rounded-full bg-yellow-400 px-4 py-2 text-sm font-semibold text-neutral-950 shadow-lg shadow-yellow-400/40 hover:shadow-yellow-400/60 transition">
+              Embaralhar
+            </button>
+          </div>
+        </header>
+
+
+        <!-- Grid de Cards -->
+        <div id="squadGrid" class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4"></div>
+      </div>
+
+
+      <!-- Modal / Lightbox acessível -->
+      <div id="lightbox" class="fixed inset-0 z-[70] hidden" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur"></div>
+        <div class="relative z-10 flex h-full w-full items-center justify-center p-4">
+          <div class="relative w-full max-w-3xl">
+            <img id="lightboxImg" src="" alt="" class="w-full rounded-3xl shadow-2xl" />
+            <div class="mt-4 flex items-center justify-between gap-4">
+              <div class="min-w-0">
+                <h3 id="lightboxName" class="truncate text-lg font-bold text-white"></h3>
+                <p id="lightboxRole" class="truncate text-sm text-neutral-300"></p>
+              </div>
+              <div class="flex items-center gap-2">
+                <button id="prevBtn"
+                  class="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm text-white hover:border-yellow-400/60 hover:text-yellow-400"
+                  aria-label="Anterior">◀</button>
+                <button id="nextBtn"
+                  class="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm text-white hover:border-yellow-400/60 hover:text-yellow-400"
+                  aria-label="Próximo">▶</button>
+                <button id="closeBtn"
+                  class="rounded-full bg-yellow-400 px-3 py-2 text-sm font-semibold text-neutral-950 shadow hover:opacity-90"
+                  aria-label="Fechar (Esc)">Fechar</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 bg-gradient-to-b from-dark via-charcoal to-dark">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 space-y-4">
+          <p class="text-primary uppercase tracking-[0.35em] text-xs font-semibold">Tire suas dúvidas</p>
+          <h2 class="text-3xl sm:text-4xl font-display">FAQ Urso</h2>
+          <p class="text-gray-300">Perguntas frequentes sobre entrega, garantia, segurança e suporte. Clique para
+            expandir.</p>
+        </div>
+        <div class="space-y-4">
+          <div class="faq-item border border-white/10 rounded-2xl overflow-hidden">
+            <button
+              class="faq-toggle w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-lg bg-charcoal/80">
+              Como funciona a entrega expressa?
+              <span class="text-primary text-2xl">+</span>
+            </button>
+            <div class="faq-content px-6 pb-4 hidden text-gray-300 text-sm">
+              Enviamos em até 24h úteis e oferecemos entrega same-day para capitais selecionadas. Você acompanha tudo
+              pelo app Urso Tracker.
+            </div>
+          </div>
+          <div class="faq-item border border-white/10 rounded-2xl overflow-hidden">
+            <button
+              class="faq-toggle w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-lg bg-charcoal/80">
+              Os produtos têm aprovação da ANVISA?
+              <span class="text-primary text-2xl">+</span>
+            </button>
+            <div class="faq-content px-6 pb-4 hidden text-gray-300 text-sm">
+              Sim, todos os suplementos possuem registro na ANVISA e laudos de qualidade de laboratórios independentes.
+            </div>
+          </div>
+          <div class="faq-item border border-white/10 rounded-2xl overflow-hidden">
+            <button
+              class="faq-toggle w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-lg bg-charcoal/80">
+              Posso montar um protocolo personalizado?
+              <span class="text-primary text-2xl">+</span>
+            </button>
+            <div class="faq-content px-6 pb-4 hidden text-gray-300 text-sm">
+              Claro! Basta responder ao nosso quiz e um coach Urso enviará um protocolo com suplementos, dosagens e
+              plano alimentar.
+            </div>
+          </div>
+          <div class="faq-item border border-white/10 rounded-2xl overflow-hidden">
+            <button
+              class="faq-toggle w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-lg bg-charcoal/80">
+              Há garantia caso eu não goste dos resultados?
+              <span class="text-primary text-2xl">+</span>
+            </button>
+            <div class="faq-content px-6 pb-4 hidden text-gray-300 text-sm">
+              Você tem 30 dias para testar. Não atingiu o resultado? Reembolsamos ou ajustamos seu plano sem custo.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Jornada Overlay -->
+    <div id="journeyOverlay" class="fixed inset-0 z-[60]">
+      <div class="absolute inset-0 bg-black/80 backdrop-blur"></div>
+      <div class="relative z-10 flex h-full w-full items-start justify-center p-4 sm:p-8">
+        <div
+          class="w-full max-w-4xl  rounded-3xl border border-white/10 bg-charcoal/95 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] h-full overflow-y-auto">
+          <div
+            class="flex flex-col gap-4 border-b border-white/5 px-6 py-5 sm:flex-row sm:items-start sm:justify-between sm:px-10">
+            <div>
+              <p class="text-xs uppercase tracking-[0.4em] text-primary">Jornada guiada</p>
+              <h3 class="text-2xl sm:text-3xl font-display">Monte sua compra Urso</h3>
+              <p class="text-sm text-gray-300">Siga os passos para escolher os suplementos ideais e concluir sua compra
+                sem atrito.</p>
+            </div>
+            <button id="closeJourney"
+              class="self-end rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-gray-300 hover:border-primary/60 hover:text-primary transition">Fechar</button>
+          </div>
+          <div class="space-y-8 px-6 py-6 sm:px-10 sm:py-8">
+            <div class="grid gap-4 sm:grid-cols-4" id="journeyStepper">
+              <div data-journey-step="0"
+                class="journey-step-indicator flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                <span
+                  class="step-circle inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-dark/60 font-display text-lg">1</span>
+                <div>
+                  <p class="step-caption text-xs uppercase tracking-[0.3em] text-gray-400">Objetivo</p>
+                  <p class="step-title text-sm font-semibold text-gray-200">Seleção</p>
+                </div>
+              </div>
+              <div data-journey-step="1"
+                class="journey-step-indicator flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                <span
+                  class="step-circle inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-dark/60 font-display text-lg">2</span>
+                <div>
+                  <p class="step-caption text-xs uppercase tracking-[0.3em] text-gray-400">Produtos</p>
+                  <p class="step-title text-sm font-semibold text-gray-200">Carrinho</p>
+                </div>
+              </div>
+              <div data-journey-step="2"
+                class="journey-step-indicator flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                <span
+                  class="step-circle inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-dark/60 font-display text-lg">3</span>
+                <div>
+                  <p class="step-caption text-xs uppercase tracking-[0.3em] text-gray-400">Entrega</p>
+                  <p class="step-title text-sm font-semibold text-gray-200">Dados</p>
+                </div>
+              </div>
+              <div data-journey-step="3"
+                class="journey-step-indicator flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                <span
+                  class="step-circle inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-dark/60 font-display text-lg">4</span>
+                <div>
+                  <p class="step-caption text-xs uppercase tracking-[0.3em] text-gray-400">Pagamento</p>
+                  <p class="step-title text-sm font-semibold text-gray-200">Conclusão</p>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-6">
+              <div class="journey-step space-y-6" data-step="0">
+                <div class="space-y-3">
+                  <h4 class="text-2xl font-display">Qual é o seu foco agora?</h4>
+                  <p class="text-sm text-gray-300">Selecione um objetivo e desbloqueie protocolos montados pelo time
+                    Urso com suplementos sinérgicos.</p>
+                </div>
+                <div class="grid gap-4 sm:grid-cols-2">
+                  <button type="button"
+                    class="objective-card flex flex-col gap-3 rounded-3xl border border-white/10 bg-dark/70 p-5 text-left transition hover:border-primary/40"
+                    data-objective="massa">
+                    <div class="flex items-center justify-between">
+                      <h5 class="text-lg font-semibold">Ganho de Massa</h5>
+                      <span
+                        class="rounded-full bg-primary/20 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-primary">Hipertrofia</span>
+                    </div>
+                    <p class="text-sm text-gray-300">Whey isolado, creatina tamponada e hipercalórico limpo para subir
+                      peso com qualidade.</p>
+                    <span class="text-xs uppercase tracking-[0.3em] text-gray-400">Ticket médio R$ 429</span>
+                  </button>
+                  <button type="button"
+                    class="objective-card flex flex-col gap-3 rounded-3xl border border-white/10 bg-dark/70 p-5 text-left transition hover:border-primary/40"
+                    data-objective="definicao">
+                    <div class="flex items-center justify-between">
+                      <h5 class="text-lg font-semibold">Definição &amp; Cutting</h5>
+                      <span
+                        class="rounded-full bg-primary/20 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-primary">Shred</span>
+                    </div>
+                    <p class="text-sm text-gray-300">Termogênicos, L-carnitina e diuréticos naturais para secar mantendo
+                      massa magra.</p>
+                    <span class="text-xs uppercase tracking-[0.3em] text-gray-400">Ticket médio R$ 389</span>
+                  </button>
+                  <button type="button"
+                    class="objective-card flex flex-col gap-3 rounded-3xl border border-white/10 bg-dark/70 p-5 text-left transition hover:border-primary/40"
+                    data-objective="energia">
+                    <div class="flex items-center justify-between">
+                      <h5 class="text-lg font-semibold">Explosão &amp; Energia</h5>
+                      <span
+                        class="rounded-full bg-primary/20 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-primary">Performance</span>
+                    </div>
+                    <p class="text-sm text-gray-300">Pré-treinos neuroestimulantes, beta-alanina e eletrólitos para
+                      treinos intensos.</p>
+                    <span class="text-xs uppercase tracking-[0.3em] text-gray-400">Ticket médio R$ 349</span>
+                  </button>
+                  <button type="button"
+                    class="objective-card flex flex-col gap-3 rounded-3xl border border-white/10 bg-dark/70 p-5 text-left transition hover:border-primary/40"
+                    data-objective="saude">
+                    <div class="flex items-center justify-between">
+                      <h5 class="text-lg font-semibold">Saúde &amp; Imunidade</h5>
+                      <span
+                        class="rounded-full bg-primary/20 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-primary">Wellness</span>
+                    </div>
+                    <p class="text-sm text-gray-300">Vitaminas bioativas, ômega-3 ultra puro e probióticos para
+                      equilíbrio total.</p>
+                    <span class="text-xs uppercase tracking-[0.3em] text-gray-400">Ticket médio R$ 309</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="journey-step hidden space-y-6" data-step="1">
+                <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <h4 class="text-2xl font-display">Monte seu stack campeão</h4>
+                    <p class="text-sm text-gray-300">Recomendamos os produtos com maior impacto no objetivo escolhido.
+                    </p>
+                  </div>
+                  <p class="text-xs uppercase tracking-[0.35em] text-primary">Objetivo: <span id="journeyObjectiveLabel"
+                      class="text-white">—</span></p>
+                </div>
+                <div id="journeyProductList" class="space-y-4">
+                  <div class="rounded-3xl border border-dashed border-white/10 bg-dark/60 p-6 text-sm text-gray-300">
+                    Selecione um objetivo no passo anterior para liberar as sugestões de produtos.</div>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-dark/60 p-4 text-xs text-gray-400">Dica do coach:
+                  ajuste a quantidade desejada em cada item. Indicamos no mínimo dois produtos para potencializar os
+                  resultados.</div>
+              </div>
+
+              <div class="journey-step hidden space-y-6" data-step="2">
+                <div class="space-y-3">
+                  <h4 class="text-2xl font-display">Dados e entrega</h4>
+                  <p class="text-sm text-gray-300">Preencha as informações para calcularmos o frete e preparar o envio
+                    imediato.</p>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-dark/60 p-5 space-y-4 text-sm text-gray-300">
+                  <h5 class="text-base font-semibold text-white">Resumo do carrinho</h5>
+                  <div id="journeySummary" class="space-y-3 text-sm"></div>
+                </div>
+                <form id="journeyCustomerForm" class="grid gap-4 md:grid-cols-2">
+                  <div class="md:col-span-2">
+                    <label class="mb-1 block text-xs uppercase tracking-[0.3em] text-gray-400">Nome completo</label>
+                    <input type="text" name="nome" data-required
+                      class="w-full rounded-2xl border border-white/10 bg-dark/80 px-4 py-3 text-sm text-gray-100 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/40"
+                      placeholder="Ex: Felipe Andrade" />
+                  </div>
+                  <div>
+                    <label class="mb-1 block text-xs uppercase tracking-[0.3em] text-gray-400">E-mail</label>
+                    <input type="email" name="email" data-required
+                      class="w-full rounded-2xl border border-white/10 bg-dark/80 px-4 py-3 text-sm text-gray-100 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/40"
+                      placeholder="voce@urso.com" />
+                  </div>
+                  <div>
+                    <label class="mb-1 block text-xs uppercase tracking-[0.3em] text-gray-400">Telefone</label>
+                    <input type="tel" name="telefone"
+                      class="w-full rounded-2xl border border-white/10 bg-dark/80 px-4 py-3 text-sm text-gray-100 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/40"
+                      placeholder="(11) 99999-9999" />
+                  </div>
+                  <div>
+                    <label class="mb-1 block text-xs uppercase tracking-[0.3em] text-gray-400">CEP</label>
+                    <input type="text" name="cep" data-required
+                      class="w-full rounded-2xl border border-white/10 bg-dark/80 px-4 py-3 text-sm text-gray-100 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/40"
+                      placeholder="00000-000" />
+                  </div>
+                  <div>
+                    <label class="mb-1 block text-xs uppercase tracking-[0.3em] text-gray-400">Cidade</label>
+                    <input type="text" name="cidade" data-required
+                      class="w-full rounded-2xl border border-white/10 bg-dark/80 px-4 py-3 text-sm text-gray-100 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/40"
+                      placeholder="São Paulo" />
+                  </div>
+                  <div class="md:col-span-2">
+                    <label class="mb-1 block text-xs uppercase tracking-[0.3em] text-gray-400">Endereço completo</label>
+                    <input type="text" name="endereco" data-required
+                      class="w-full rounded-2xl border border-white/10 bg-dark/80 px-4 py-3 text-sm text-gray-100 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/40"
+                      placeholder="Rua, número, complemento" />
+                  </div>
+                </form>
+                <div class="grid gap-4 lg:grid-cols-2">
+                  <label
+                    class="flex items-center gap-3 rounded-2xl border border-white/10 bg-dark/70 p-4 text-sm text-gray-200 hover:border-primary/60">
+                    <input type="radio" name="shipping" value="35" data-shipping data-label="Entrega Expressa 24h"
+                      checked class="h-4 w-4 border-white/20 bg-dark/80 text-primary focus:ring-primary" />
+                    <div>
+                      <p class="font-semibold text-white">Entrega Expressa 24h</p>
+                      <p class="text-xs uppercase tracking-[0.3em] text-gray-400">Disponível para capitais. R$ 35</p>
+                    </div>
+                  </label>
+                  <label
+                    class="flex items-center gap-3 rounded-2xl border border-white/10 bg-dark/70 p-4 text-sm text-gray-200 hover:border-primary/60">
+                    <input type="radio" name="shipping" value="18" data-shipping data-label="Entrega Econômica 3-5 dias"
+                      class="h-4 w-4 border-white/20 bg-dark/80 text-primary focus:ring-primary" />
+                    <div>
+                      <p class="font-semibold text-white">Entrega Econômica 3-5 dias</p>
+                      <p class="text-xs uppercase tracking-[0.3em] text-gray-400">Mais escolhida. R$ 18</p>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="journey-step hidden space-y-6" data-step="3">
+                <div id="journeySuccess"
+                  class="hidden rounded-2xl border border-primary/60 bg-primary/10 p-5 text-primary">
+                  <div class="flex items-center gap-4">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-dark text-2xl">✔
+                    </div>
+                    <div>
+                      <p class="text-xs uppercase tracking-[0.4em]">Compra concluída</p>
+                      <p class="text-lg font-semibold text-white">Sua jornada foi finalizada com sucesso!</p>
+                      <p class="text-sm text-primary/80">Você receberá um e-mail com o código de rastreio em instantes.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="grid gap-6 lg:grid-cols-2">
+                  <div id="journeyPaymentForm" class="space-y-4">
+                    <div class="space-y-3">
+                      <h4 class="text-2xl font-display">Pagamento seguro</h4>
+                      <p class="text-sm text-gray-300">Escolha a forma de pagamento desejada. Utilizamos criptografia de
+                        ponta a ponta.</p>
+                    </div>
+                    <div class="space-y-3">
+                      <label
+                        class="flex items-center gap-3 rounded-2xl border border-white/10 bg-dark/70 p-4 text-sm text-gray-200 hover:border-primary/60">
+                        <input type="radio" name="payment" value="card" data-payment data-label="Cartão em 3x sem juros"
+                          checked class="h-4 w-4 border-white/20 bg-dark/80 text-primary focus:ring-primary" />
+                        <div>
+                          <p class="font-semibold text-white">Cartão em 3x sem juros</p>
+                          <p class="text-xs uppercase tracking-[0.3em] text-gray-400">Visa, Master, Amex</p>
+                        </div>
+                      </label>
+                      <label
+                        class="flex items-center gap-3 rounded-2xl border border-white/10 bg-dark/70 p-4 text-sm text-gray-200 hover:border-primary/60">
+                        <input type="radio" name="payment" value="pix" data-payment data-label="PIX imediato"
+                          class="h-4 w-4 border-white/20 bg-dark/80 text-primary focus:ring-primary" />
+                        <div>
+                          <p class="font-semibold text-white">PIX imediato</p>
+                          <p class="text-xs uppercase tracking-[0.3em] text-gray-400">1% OFF no valor final</p>
+                        </div>
+                      </label>
+                      <label
+                        class="flex items-center gap-3 rounded-2xl border border-white/10 bg-dark/70 p-4 text-sm text-gray-200 hover:border-primary/60">
+                        <input type="radio" name="payment" value="boleto" data-payment data-label="Boleto bancário"
+                          class="h-4 w-4 border-white/20 bg-dark/80 text-primary focus:ring-primary" />
+                        <div>
+                          <p class="font-semibold text-white">Boleto bancário</p>
+                          <p class="text-xs uppercase tracking-[0.3em] text-gray-400">Compensação em até 1 dia útil</p>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="rounded-2xl border border-white/10 bg-dark/60 p-4 text-xs text-gray-400">
+                      Ambiente 100% seguro com certificação SSL e antifraude ativo.
+                    </div>
+                  </div>
+                  <div class="rounded-2xl border border-white/10 bg-dark/60 p-5 space-y-4 text-sm text-gray-300">
+                    <h5 class="text-base font-semibold text-white">Resumo final</h5>
+                    <div id="journeyPaymentSummary" class="space-y-3 text-sm"></div>
+                    <div class="rounded-2xl border border-white/5 bg-dark/80 p-4 text-xs text-gray-400">
+                      Ao finalizar você concorda com os termos de uso e política de privacidade Urso.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex flex-col gap-4 border-t border-white/5 pt-6 sm:flex-row sm:items-center sm:justify-between">
+              <button id="journeyPrev"
+                class="rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-gray-200 transition hover:border-primary/60 hover:text-primary">Voltar</button>
+              <div class="flex flex-col items-end gap-2 sm:flex-row sm:items-center sm:gap-6">
+                <span class="text-xs uppercase tracking-[0.3em] text-gray-400">Passo <span id="journeyStepCount"
+                    class="text-white">1</span> / 4</span>
+                <button id="journeyNext"
+                  class="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-dark shadow-lg shadow-primary/40 transition hover:shadow-primary/60 disabled:cursor-not-allowed disabled:opacity-60">Continuar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
-  <footer>
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <span class="brand" style="font-size: 1.5rem; letter-spacing: 0.24em;">URSO</span>
-        <p>
-          “Pense como um urso. Que internaliza a força bruta. Aja como um urso. Aqui, a preguiça hiberna para sempre. Então seja Urso ou saia do caminho.”
-        </p>
-        <a class="cta-button" style="justify-self: start; background: transparent; border: 1px solid rgba(255,255,255,0.25); color: var(--urso-yellow); box-shadow: none;"
-          href="#">Entre para a alcateia</a>
-      </div>
-      <div class="footer-links">
-        <a href="#porque">Cultura Urso</a>
-        <a href="#produtos">Loja</a>
-        <a href="#predador">Linha Predador</a>
-        <a href="#comunidade">Comunidade</a>
-      </div>
-      <div class="footer-links">
-        <a href="#">Blog</a>
-        <a href="#">Distribuidores</a>
-        <a href="#">Suporte</a>
-        <a href="#">Políticas</a>
+  <footer class="bg-charcoal border-t border-white/10">
+    <div
+      class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
+      <p>© Desenvolvido pela Equipe 15 - Big Urso. Todos os direitos reservados.</p>
+      <div class="flex items-center gap-6">
+        <a href="#" class="hover:text-primary">Política de privacidade</a>
+        <a href="#" class="hover:text-primary">Termos de uso</a>
+        <a href="#" class="hover:text-primary">Suporte</a>
       </div>
     </div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/marquee3000@1.1.1/marquee3k.min.js"></script>
+  <script>
+
+    Marquee3k.init();
+
+    // Countdown de 48h
+    const countdownElement = document.getElementById('countdown');
+    const targetDate = new Date();
+    targetDate.setHours(targetDate.getHours() + 48);
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now;
+      if (diff <= 0) {
+        countdownElement.textContent = 'Oferta encerrada';
+        clearInterval(countdownInterval);
+        return;
+      }
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 48);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      countdownElement.innerHTML = `
+        <div class="flex flex-col items-center bg-charcoal/80 border border-white/10 rounded-2xl px-4 py-3">
+          <span>${String(hours).padStart(2, '0')}</span>
+          <span class="text-xs text-gray-400 uppercase tracking-[0.3em]">Horas</span>
+        </div>
+        <div class="flex flex-col items-center bg-charcoal/80 border border-white/10 rounded-2xl px-4 py-3">
+          <span>${String(minutes).padStart(2, '0')}</span>
+          <span class="text-xs text-gray-400 uppercase tracking-[0.3em]">Min</span>
+        </div>
+        <div class="flex flex-col items-center bg-charcoal/80 border border-white/10 rounded-2xl px-4 py-3">
+          <span>${String(seconds).padStart(2, '0')}</span>
+          <span class="text-xs text-gray-400 uppercase tracking-[0.3em]">Seg</span>
+        </div>`;
+    }
+    const countdownInterval = setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-toggle').forEach((button) => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector('span');
+        content.classList.toggle('hidden');
+        icon.textContent = content.classList.contains('hidden') ? '+' : '-';
+      });
+    });
+
+    // Jornada guiada de compra
+    const journeyOverlay = document.getElementById('journeyOverlay');
+    if (journeyOverlay) {
+      const openJourneyButtons = document.querySelectorAll('[data-open-journey]');
+      const closeJourneyButton = document.getElementById('closeJourney');
+      const journeySteps = Array.from(journeyOverlay.querySelectorAll('.journey-step'));
+      const journeyIndicators = Array.from(journeyOverlay.querySelectorAll('.journey-step-indicator'));
+      const objectiveButtons = Array.from(journeyOverlay.querySelectorAll('.objective-card'));
+      const productList = document.getElementById('journeyProductList');
+      const journeyPrev = document.getElementById('journeyPrev');
+      const journeyNext = document.getElementById('journeyNext');
+      const journeyStepCount = document.getElementById('journeyStepCount');
+      const journeyObjectiveLabel = document.getElementById('journeyObjectiveLabel');
+      const journeySummary = document.getElementById('journeySummary');
+      const journeyPaymentSummary = document.getElementById('journeyPaymentSummary');
+      const journeyCustomerForm = document.getElementById('journeyCustomerForm');
+      const journeySuccess = document.getElementById('journeySuccess');
+      const journeyPaymentForm = document.getElementById('journeyPaymentForm');
+      const shippingInputs = Array.from(journeyOverlay.querySelectorAll('input[data-shipping]'));
+      const paymentInputs = Array.from(journeyOverlay.querySelectorAll('input[data-payment]'));
+
+      const journeyCatalog = {
+        massa: {
+          name: 'Ganho de Massa',
+          products: [
+            { id: 'whey-massa', name: 'Whey Protein Noite Selvagem', description: 'Blend isolado + hidrolisado, 26g de proteína por dose.', price: 189, highlight: 'Mais vendido' },
+            { id: 'creatina-massa', name: 'Creatina Monohidratada Creapure', description: '95% de saturação muscular comprovada em 4 semanas.', price: 129 },
+            { id: 'gainer-massa', name: 'Clean Gainer Urso', description: 'Hipercalórico limpo com carboidratos de baixo índice glicêmico.', price: 149 },
+            { id: 'glutamina-massa', name: 'Glutamina Recovery 300g', description: 'Recuperação imunológica acelerada no pós-treino.', price: 119 }
+          ]
+        },
+        definicao: {
+          name: 'Definição & Cutting',
+          products: [
+            { id: 'termogenico-def', name: 'Termogênico Fúria 3.0', description: 'Cafeína microencapsulada e ioimbina para queima máxima.', price: 159, highlight: 'Top seller' },
+            { id: 'lcarnitina-def', name: 'L-Carnitina 2000mg', description: 'Mobilização de gordura e aumento de energia limpa.', price: 99 },
+            { id: 'diuretico-def', name: 'Diurético Natural Dry Cut', description: 'Reduz retenção sem perda de minerais essenciais.', price: 89 },
+            { id: 'wheyiso-def', name: 'Whey Isolado Zero Carb', description: '0g de carboidratos por dose, 28g de proteína pura.', price: 199 }
+          ]
+        },
+        energia: {
+          name: 'Explosão & Energia',
+          products: [
+            { id: 'pretreino-energia', name: 'Pré-treino Beast Mode', description: 'Citrulina, beta-alanina e nootrópicos para foco absoluto.', price: 149, highlight: 'Novo lote' },
+            { id: 'beta-energia', name: 'Beta-Alanina Nitro 200g', description: 'Aumenta capacidade anaeróbica e retarda fadiga.', price: 109 },
+            { id: 'eletrico-energia', name: 'Eletrólitos ProHydra', description: 'Reposição completa com magnésio quelado e potássio.', price: 79 },
+            { id: 'cafeina-energia', name: 'Cápsulas de Cafeína 210mg', description: 'Liberação controlada por 6 horas.', price: 69 }
+          ]
+        },
+        saude: {
+          name: 'Saúde & Imunidade',
+          products: [
+            { id: 'multivit-saude', name: 'Multivitamínico Alpha', description: 'Vitaminas bioativas com alta biodisponibilidade.', price: 129, highlight: 'Essencial' },
+            { id: 'omega-saude', name: 'Ômega-3 Ultra Pure', description: 'EPA/DHA concentrado com tripla destilação molecular.', price: 139 },
+            { id: 'probiotico-saude', name: 'Probiótico Biotech 50B', description: '50 bilhões de CFU para equilíbrio intestinal.', price: 149 },
+            { id: 'vitc-saude', name: 'Vitamina C Lipossomal', description: 'Absorção prolongada e suporte antioxidante.', price: 89 }
+          ]
+        }
+      };
+
+      let currentStep = 0;
+      let selectedObjective = '';
+      let cart = new Map();
+      let selectedShipping = 35;
+      let selectedShippingLabel = 'Entrega Expressa 24h';
+      let selectedPaymentLabel = 'Cartão em 3x sem juros';
+      let purchaseCompleted = false;
+
+      const productPlaceholder = '<div class="rounded-3xl border border-dashed border-white/10 bg-dark/60 p-6 text-sm text-gray-300">Selecione um objetivo no passo anterior para liberar as sugestões de produtos.</div>';
+
+      function formatCurrency(value) {
+        return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+      }
+
+      function findProductById(id) {
+        const objectives = Object.values(journeyCatalog);
+        for (const objective of objectives) {
+          const product = objective.products.find((item) => item.id === id);
+          if (product) {
+            return product;
+          }
+        }
+        return null;
+      }
+
+      function getCartItems() {
+        return Array.from(cart.values());
+      }
+
+      function getCartTotalQuantity() {
+        return getCartItems().reduce((total, item) => total + item.quantity, 0);
+      }
+
+      function setIndicatorState(indicator, state) {
+        const circle = indicator.querySelector('.step-circle');
+        const caption = indicator.querySelector('.step-caption');
+        const title = indicator.querySelector('.step-title');
+        indicator.classList.remove('border-primary/60', 'bg-primary/10', 'border-primary/40', 'bg-primary/5');
+        circle.classList.remove('bg-primary', 'bg-primary/70', 'bg-dark/60', 'text-dark', 'border-transparent');
+        circle.classList.add('border-white/20');
+        caption.classList.remove('text-primary');
+        caption.classList.add('text-gray-400');
+        title.classList.remove('text-primary', 'text-white');
+        title.classList.add('text-gray-200');
+
+        if (state === 'active') {
+          indicator.classList.add('border-primary/60', 'bg-primary/10');
+          circle.classList.add('bg-primary', 'text-dark', 'border-transparent');
+          caption.classList.remove('text-gray-400');
+          caption.classList.add('text-primary');
+          title.classList.remove('text-gray-200');
+          title.classList.add('text-white');
+        } else if (state === 'complete') {
+          indicator.classList.add('border-primary/40', 'bg-primary/5');
+          circle.classList.add('bg-primary/70', 'text-dark', 'border-transparent');
+          caption.classList.remove('text-gray-400');
+          caption.classList.add('text-primary');
+          title.classList.remove('text-gray-200');
+          title.classList.add('text-primary');
+        } else {
+          circle.classList.add('bg-dark/60');
+        }
+      }
+
+      function renderProducts() {
+        if (!productList) return;
+        if (!selectedObjective) {
+          productList.innerHTML = productPlaceholder;
+          return;
+        }
+        const data = journeyCatalog[selectedObjective];
+        journeyObjectiveLabel.textContent = data?.name ?? '—';
+        if (!data) {
+          productList.innerHTML = productPlaceholder;
+          return;
+        }
+        productList.innerHTML = data.products
+          .map((product) => {
+            const quantity = cart.get(product.id)?.quantity ?? 0;
+            const badge = product.highlight
+              ? `<span class="inline-flex items-center gap-1 rounded-full bg-primary/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.3em] text-primary">${product.highlight}</span>`
+              : '';
+            return `
+              <div class="grid gap-4 rounded-3xl border border-white/10 bg-dark/70 p-5 sm:grid-cols-[1fr_auto] sm:items-center">
+                <div class="space-y-2">
+                  <div class="flex flex-wrap items-center gap-2">
+                    <h5 class="text-lg font-semibold text-white">${product.name}</h5>
+                    ${badge}
+                  </div>
+                  <p class="text-sm text-gray-300">${product.description}</p>
+                  <span class="text-sm font-semibold text-primary">${formatCurrency(product.price)}</span>
+                </div>
+                <div class="flex items-center justify-end gap-3">
+                  <button type="button" class="journey-qty h-9 w-9 rounded-full border border-white/10 text-lg text-gray-200 transition hover:border-primary/60 hover:text-primary" data-action="decrease" data-id="${product.id}">−</button>
+                  <span class="w-6 text-center text-base font-semibold text-white" id="qty-${product.id}">${quantity}</span>
+                  <button type="button" class="journey-qty h-9 w-9 rounded-full bg-primary text-lg font-semibold text-dark transition hover:shadow-lg hover:shadow-primary/40" data-action="increase" data-id="${product.id}">+</button>
+                </div>
+              </div>
+            `;
+          })
+          .join('');
+      }
+
+      function updateSummary() {
+        if (!journeySummary || !journeyPaymentSummary) return;
+        const items = getCartItems();
+        if (items.length === 0) {
+          journeySummary.innerHTML = '<p class="text-sm text-gray-400">Nenhum item selecionado ainda.</p>';
+          journeyPaymentSummary.innerHTML = '<p class="text-sm text-gray-400">Adicione produtos para ver o total.</p>';
+          updateStepValidity();
+          return;
+        }
+        let subtotal = 0;
+        const itemsMarkup = items
+          .map(({ product, quantity }) => {
+            const partial = product.price * quantity;
+            subtotal += partial;
+            return `
+              <div class="flex items-center justify-between gap-3">
+                <div>
+                  <p class="text-sm font-semibold text-white">${product.name}</p>
+                  <p class="text-xs text-gray-400">${quantity}x ${formatCurrency(product.price)}</p>
+                </div>
+                <span class="text-sm font-semibold text-primary">${formatCurrency(partial)}</span>
+              </div>
+            `;
+          })
+          .join('');
+        const paymentMethod = paymentInputs.find((input) => input.checked)?.value ?? 'card';
+        selectedPaymentLabel = paymentInputs.find((input) => input.checked)?.dataset.label ?? selectedPaymentLabel;
+        const shippingLine = `<div class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-gray-400"><span>Frete • ${selectedShippingLabel}</span><span class="text-gray-200">${selectedShipping > 0 ? formatCurrency(selectedShipping) : 'Grátis'}</span></div>`;
+        const discountValue = paymentMethod === 'pix' ? subtotal * 0.01 : 0;
+        const discountLine = discountValue
+          ? `<div class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-primary"><span>Desconto PIX</span><span>- ${formatCurrency(discountValue)}</span></div>`
+          : '';
+        const total = subtotal + selectedShipping - discountValue;
+        const subtotalLine = `<div class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-gray-400"><span>Subtotal</span><span class="text-gray-200">${formatCurrency(subtotal)}</span></div>`;
+        const paymentLine = `<div class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-gray-400"><span>Pagamento</span><span class="text-gray-200">${selectedPaymentLabel}</span></div>`;
+        const totalLine = `<div class="flex items-center justify-between border-t border-white/10 pt-3 text-lg font-semibold text-white"><span>Total a pagar</span><span>${formatCurrency(total)}</span></div>`;
+        const summaryMarkup = `${itemsMarkup}<div class="space-y-2 pt-3">${subtotalLine}${shippingLine}${discountLine}${paymentLine}${totalLine}</div>`;
+        journeySummary.innerHTML = summaryMarkup;
+        journeyPaymentSummary.innerHTML = summaryMarkup;
+        updateStepValidity();
+      }
+
+      function validateForm() {
+        if (!journeyCustomerForm) return false;
+        const required = Array.from(journeyCustomerForm.querySelectorAll('[data-required]'));
+        return required.every((input) => input.value.trim().length > 0);
+      }
+
+      function isStepValid(stepIndex) {
+        if (purchaseCompleted) {
+          return false;
+        }
+        if (stepIndex === 0) {
+          return Boolean(selectedObjective);
+        }
+        if (stepIndex === 1) {
+          return getCartTotalQuantity() > 0;
+        }
+        if (stepIndex === 2) {
+          return getCartTotalQuantity() > 0 && validateForm();
+        }
+        if (stepIndex === 3) {
+          return getCartTotalQuantity() > 0;
+        }
+        return true;
+      }
+
+      function updateStepValidity() {
+        if (purchaseCompleted) {
+          journeyNext.disabled = true;
+          return;
+        }
+        journeyNext.disabled = !isStepValid(currentStep);
+      }
+
+      function showStep(index) {
+        currentStep = index;
+        journeySteps.forEach((step, idx) => {
+          step.classList.toggle('hidden', idx !== index);
+        });
+        journeyIndicators.forEach((indicator, idx) => {
+          if (idx < index) {
+            setIndicatorState(indicator, 'complete');
+          } else if (idx === index) {
+            setIndicatorState(indicator, purchaseCompleted && index === journeySteps.length - 1 ? 'complete' : 'active');
+          } else {
+            setIndicatorState(indicator, 'upcoming');
+          }
+        });
+        journeyStepCount.textContent = index + 1;
+        const disablePrev = index === 0 || purchaseCompleted;
+        journeyPrev.disabled = disablePrev;
+        journeyPrev.classList.toggle('opacity-40', disablePrev);
+        journeyPrev.classList.toggle('cursor-not-allowed', disablePrev);
+        if (purchaseCompleted) {
+          journeyNext.textContent = 'Compra concluída';
+          journeyNext.disabled = true;
+        } else if (index === journeySteps.length - 1) {
+          journeyNext.textContent = 'Finalizar compra';
+        } else {
+          journeyNext.textContent = 'Continuar';
+        }
+        updateStepValidity();
+        if (index === 1) {
+          renderProducts();
+        }
+        if (index >= 1) {
+          updateSummary();
+        }
+      }
+
+      function resetJourney() {
+        cart = new Map();
+        selectedObjective = '';
+        purchaseCompleted = false;
+        objectiveButtons.forEach((button) => {
+          button.classList.remove('border-primary/60', 'bg-primary/10', 'ring-2', 'ring-primary/60');
+        });
+        journeyCustomerForm.reset();
+        shippingInputs.forEach((input) => {
+          if (input.checked) {
+            selectedShipping = Number(input.value);
+            selectedShippingLabel = input.dataset.label ?? selectedShippingLabel;
+          }
+        });
+        paymentInputs.forEach((input) => {
+          if (input.checked) {
+            selectedPaymentLabel = input.dataset.label ?? selectedPaymentLabel;
+          }
+        });
+        journeyObjectiveLabel.textContent = '—';
+        journeySuccess.classList.add('hidden');
+        journeyPaymentForm.classList.remove('hidden');
+        journeyPrev.classList.remove('opacity-40', 'cursor-not-allowed');
+        journeyPrev.disabled = true;
+        journeyNext.disabled = true;
+        journeyNext.textContent = 'Continuar';
+        renderProducts();
+        journeySummary.innerHTML = '<p class="text-sm text-gray-400">Nenhum item selecionado ainda.</p>';
+        journeyPaymentSummary.innerHTML = '<p class="text-sm text-gray-400">Adicione produtos para ver o total.</p>';
+        showStep(0);
+      }
+
+      function adjustQuantity(id, delta) {
+        if (purchaseCompleted) return;
+        const product = findProductById(id);
+        if (!product) return;
+        const current = cart.get(id)?.quantity ?? 0;
+        const nextQuantity = Math.max(0, current + delta);
+        if (nextQuantity === 0) {
+          cart.delete(id);
+        } else {
+          cart.set(id, { product, quantity: nextQuantity });
+        }
+        renderProducts();
+        updateSummary();
+      }
+
+      function finalizePurchase() {
+        if (!isStepValid(currentStep)) return;
+        purchaseCompleted = true;
+        journeySuccess.classList.remove('hidden');
+        journeyPaymentForm.classList.add('hidden');
+        journeyNext.textContent = 'Compra concluída';
+        journeyNext.disabled = true;
+        journeyPrev.disabled = true;
+        journeyPrev.classList.add('opacity-40', 'cursor-not-allowed');
+        showStep(currentStep);
+      }
+
+      openJourneyButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          resetJourney();
+          journeyOverlay.classList.remove('hidden');
+          document.body.classList.add('overflow-hidden');
+        });
+      });
+
+      function closeJourneyOverlay() {
+        journeyOverlay.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+
+      closeJourneyButton?.addEventListener('click', () => {
+        closeJourneyOverlay();
+      });
+
+      journeyOverlay.addEventListener('click', (event) => {
+        if (event.target === journeyOverlay) {
+          closeJourneyOverlay();
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !journeyOverlay.classList.contains('hidden')) {
+          closeJourneyOverlay();
+        }
+      });
+
+      journeyPrev.addEventListener('click', () => {
+        if (journeyPrev.disabled) return;
+        const previousStep = Math.max(0, currentStep - 1);
+        showStep(previousStep);
+      });
+
+      journeyNext.addEventListener('click', () => {
+        if (purchaseCompleted) return;
+        if (currentStep === journeySteps.length - 1) {
+          finalizePurchase();
+          return;
+        }
+        if (!isStepValid(currentStep)) return;
+        showStep(currentStep + 1);
+      });
+
+      objectiveButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          if (purchaseCompleted) return;
+          const previousObjective = selectedObjective;
+          selectedObjective = button.dataset.objective ?? '';
+          objectiveButtons.forEach((btn) => btn.classList.remove('border-primary/60', 'bg-primary/10', 'ring-2', 'ring-primary/60'));
+          if (selectedObjective) {
+            button.classList.add('border-primary/60', 'bg-primary/10', 'ring-2', 'ring-primary/60');
+          }
+          if (previousObjective && previousObjective !== selectedObjective) {
+            cart = new Map();
+          }
+          if (currentStep > 0) {
+            renderProducts();
+            updateSummary();
+          }
+          updateStepValidity();
+        });
+      });
+
+      productList?.addEventListener('click', (event) => {
+        const actionButton = event.target.closest('[data-action]');
+        if (!actionButton) return;
+        const id = actionButton.dataset.id;
+        const action = actionButton.dataset.action;
+        if (!id || !action) return;
+        adjustQuantity(id, action === 'increase' ? 1 : -1);
+      });
+
+      shippingInputs.forEach((input) => {
+        input.addEventListener('change', () => {
+          if (!input.checked) return;
+          selectedShipping = Number(input.value);
+          selectedShippingLabel = input.dataset.label ?? selectedShippingLabel;
+          updateSummary();
+        });
+      });
+
+      paymentInputs.forEach((input) => {
+        input.addEventListener('change', () => {
+          if (!input.checked) return;
+          selectedPaymentLabel = input.dataset.label ?? selectedPaymentLabel;
+          updateSummary();
+        });
+      });
+
+      journeyCustomerForm?.addEventListener('input', () => {
+        updateStepValidity();
+      });
+    }
+  </script>
+
+
 </body>
 
 </html>
